@@ -1,0 +1,13 @@
+title: "Klimaspuren"
+description: "Offene Lernplattform zu Grünstrukturen, Versiegelung und Stadtklima"
+lang: de
+url: ""
+baseurl: ""
+markdown: kramdown
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE-CODE
+  - .gitignore
+permalink: pretty
