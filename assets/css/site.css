@@ -152,3 +152,46 @@ body{background:#fff}
 .klimaspuren-app .oer-source-table .mini{font-size:.74rem;line-height:1.5;color:var(--ks-muted)}
 @media (max-width:720px){.klimaspuren-app .oer-gallery{grid-template-columns:1fr;gap:15px}.klimaspuren-app .oer-gallery .oer-figure-img{height:auto;max-height:340px}}
 @media print{.klimaspuren-app .oer-figure-img{max-height:320px}.klimaspuren-app .oer-gallery{grid-template-columns:1fr 1fr}}
+
+
+/* v0.5 – Leaflet-Darstellungsreparatur.
+   Die Karten dürfen nicht durch globale img-/svg-Regeln auf Content-Breite begrenzt werden.
+   Wichtigste Leaflet-Positionierungsregeln lokal als Fallback, falls die CDN-CSS nicht lädt. */
+.klimaspuren-app .map-frame.leaflet-container,
+.klimaspuren-app .leaflet-container{position:relative;overflow:hidden;isolation:isolate;outline:0}
+.klimaspuren-app .leaflet-pane,
+.klimaspuren-app .leaflet-tile,
+.klimaspuren-app .leaflet-marker-icon,
+.klimaspuren-app .leaflet-marker-shadow,
+.klimaspuren-app .leaflet-tile-container,
+.klimaspuren-app .leaflet-pane > svg,
+.klimaspuren-app .leaflet-pane > canvas,
+.klimaspuren-app .leaflet-image-layer{position:absolute;left:0;top:0}
+.klimaspuren-app .leaflet-pane{z-index:400}
+.klimaspuren-app .leaflet-tile-pane{z-index:200}
+.klimaspuren-app .leaflet-overlay-pane{z-index:400}
+.klimaspuren-app .leaflet-shadow-pane{z-index:500}
+.klimaspuren-app .leaflet-marker-pane{z-index:600}
+.klimaspuren-app .leaflet-tooltip-pane{z-index:650}
+.klimaspuren-app .leaflet-popup-pane{z-index:700}
+.klimaspuren-app .leaflet-tile,
+.klimaspuren-app .leaflet-container img,
+.klimaspuren-app .leaflet-container svg{max-width:none!important;max-height:none!important}
+.klimaspuren-app .leaflet-container .leaflet-tile{width:256px;height:256px;border:0}
+.klimaspuren-app .leaflet-zoom-animated{transform-origin:0 0}
+.klimaspuren-app .leaflet-control-container .leaflet-top,
+.klimaspuren-app .leaflet-control-container .leaflet-bottom{position:absolute;z-index:1000;pointer-events:none}
+.klimaspuren-app .leaflet-control-container .leaflet-top{top:0}
+.klimaspuren-app .leaflet-control-container .leaflet-bottom{bottom:0}
+.klimaspuren-app .leaflet-control-container .leaflet-left{left:0}
+.klimaspuren-app .leaflet-control-container .leaflet-right{right:0}
+.klimaspuren-app .leaflet-control{position:relative;z-index:800;pointer-events:auto}
+.klimaspuren-app .leaflet-top .leaflet-control{margin-top:10px}
+.klimaspuren-app .leaflet-bottom .leaflet-control{margin-bottom:10px}
+.klimaspuren-app .leaflet-left .leaflet-control{margin-left:10px}
+.klimaspuren-app .leaflet-right .leaflet-control{margin-right:10px}
+.klimaspuren-app .leaflet-control-zoom a{display:block;width:30px;height:30px;line-height:30px;text-align:center;background:#fff;color:#2d4d47;text-decoration:none;border:1px solid #d5dad8}
+.klimaspuren-app .leaflet-control-attribution{font-size:10px;background:rgba(255,255,255,.85);padding:0 5px}
+.klimaspuren-app .leaflet-tile-loaded{visibility:inherit}
+.klimaspuren-app .wms-diagnostics{margin-top:.7rem;border-top:1px solid #e8ebea;padding-top:.45rem}
+.klimaspuren-app .wms-diagnostics a{text-decoration:underline;text-underline-offset:2px}

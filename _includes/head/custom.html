@@ -1,5 +1,6 @@
-<!-- Klimaspuren: zusätzliche Styles nach Minimal Mistakes -->
+<!-- Klimaspuren: Projekt-CSS nach Minimal Mistakes -->
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
 {% if page.map %}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoGm0b+oF6C+4Zw=" crossorigin="">
+<!-- Leaflet-Kartenstile: jsDelivr als Hauptquelle; lokale Grundstile als zusätzliche Absicherung in site.css -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 {% endif %}

@@ -62,3 +62,10 @@ Eigene Lehrmaterialien: CC BY 4.0 (Autorenschaft noch konkretisieren); eigener C
 ## Lokal testen
 
 Ruby + Bundler erforderlich: `bundle install` und `bundle exec jekyll serve`. Bei Installation via GitHub Pages erfolgt der Build normalerweise serverseitig. 
+
+
+## Reparatur v0.5 – Kartenvergleich
+
+Die Darstellung von Leaflet wurde robuster gemacht: zusätzliches CSS-CDN, lokale Leaflet-Kernstile, Karten-Neuvermessung per ResizeObserver und Statusmeldungen bei WMS-Ausfällen. Die Orthofotoebene links und Klimaplanatlasebene rechts sind getrennt. Das hessische Orthofoto nutzt den veröffentlichten WMS `he_dop_rgb` (Hessische Verwaltung für Bodenmanagement und Geoinformation).
+
+**Offene Punkte:** Externe Live-GetMap-Aufrufe konnten in der Entwicklungsumgebung nicht getestet werden. Die Klimaplanatlas-Layer und die vom WMS unterstützten Koordinatensysteme sind auf der veröffentlichten Website über die neuen GetCapabilities-Links zu prüfen.
