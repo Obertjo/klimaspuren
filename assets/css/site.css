@@ -1,21 +1,137 @@
-:root {--ink:#1e312a;--muted:#607369;--green:#316749;--dark:#173c2a;--soft:#eaf1e6;--warm:#f6f7f2;--paper:#fff;--line:#dce4dc;--orange:#c7844b;--shadow:0 12px 40px rgba(22,57,38,.06)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}.klimaspuren-app{color:var(--ink)}.klimaspuren-app a{color:var(--green)}.klimaspuren-app img,.klimaspuren-app svg{max-width:100%}.klimaspuren-app button,.klimaspuren-app input,.klimaspuren-app textarea,.klimaspuren-app select{font:inherit}.klimaspuren-app button{cursor:pointer}.klimaspuren-app h1,.klimaspuren-app h2,.klimaspuren-app h3{font-weight:680;line-height:1.16;letter-spacing:-.035em}.klimaspuren-app h1{font-size:clamp(2.4rem,5.4vw,4.7rem);margin:.35em 0 .4em}.klimaspuren-app h2{font-size:clamp(1.7rem,3vw,2.7rem);margin:.2em 0 .6em}.klimaspuren-app h3{font-size:1.22rem;margin:0 0 .4em}.klimaspuren-app p{margin:.4em 0 1em}.container{width:min(1200px,calc(100% - 40px));margin-inline:auto}.section{padding:60px 0}.section.tight{padding:34px 0}.eyebrow{font-size:.73rem;font-weight:780;letter-spacing:.13em;text-transform:uppercase;color:#63866a}.intro{font-size:1.12rem;line-height:1.7;color:var(--muted);max-width:760px}.small{font-size:.89rem}.muted{color:var(--muted)}.mini{font-size:.78rem;color:var(--muted)}.lead{font-size:1.25rem}.pill{display:inline-flex;align-items:center;gap:8px;background:#e7efe4;color:#336148;border:1px solid #d4e4d3;border-radius:20px;padding:4px 11px;font-size:.81rem;font-weight:660}.flex-row{display:flex;align-items:center;justify-content:space-between;gap:20px}.space-top{margin-top:20px}.space-large{margin-top:40px}
-
-.hero{padding:83px 0 65px;background:radial-gradient(ellipse at 86% 20%,#e6f0dc 0,transparent 46%),var(--warm)}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}.hero h1{max-width:680px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:27px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:10px 19px;border-radius:11px;background:var(--green);color:white;text-decoration:none;font-weight:680;border:1px solid var(--green);transition:transform .1s,box-shadow .1s}.btn:hover{background:#245639;color:white;box-shadow:0 6px 15px #30644922}.btn:active{transform:translateY(1px)}.btn.secondary{background:transparent;color:var(--green);border-color:#b9cbbd}.btn.secondary:hover{background:#e8f0e5}.btn.quiet{background:#f0f4ee;color:#315b43;border-color:#e0e8df}.btn.smallbtn{min-height:38px;padding:7px 12px;font-size:.88rem}.link-inline{font-weight:680}.hero-card{border:1px solid #dae5d7;background:#fdfefa;padding:16px;border-radius:22px;box-shadow:var(--shadow)}.hero-art{background:#e5ebe0;border-radius:16px;min-height:310px;position:relative;overflow:hidden}.art-caption{padding:13px 6px 2px;color:var(--muted);font-size:.88rem}.tag{border:1px solid var(--line);background:white;border-radius:14px;padding:5px 10px;font-size:.8rem}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 6px 23px rgba(25,57,37,.025)}.card h3{margin-top:12px}.card p{color:var(--muted)}.card-number{color:#77977e;letter-spacing:.1em;font-size:.77rem;font-weight:800}.card-icon{display:inline-grid;place-items:center;width:47px;height:47px;background:#e8f0e6;border-radius:14px;color:var(--green);font-size:1.32rem}.split{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:var(--shadow)}.panel.flat{box-shadow:none}.panel h3{margin-top:0}.band{background:var(--dark);color:white;border-radius:23px;padding:36px 40px}.band p{color:#d3e2d6}.band .btn{background:#fff;border-color:#fff;color:var(--dark)}.band .btn:hover{color:var(--dark)}.page-hero{padding:55px 0 32px}.page-hero h1{font-size:clamp(2.2rem,4vw,3.55rem)}.page-hero .intro{max-width:800px}.callout{border-left:4px solid #91af94;background:#edf3e9;border-radius:0 12px 12px 0;padding:16px 21px;color:#355946}.warning{border-left-color:#d4a36a;background:#fff6e8;color:#785b34}.steps{counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}.step:before{counter-increment:step;content:counter(step,decimal-leading-zero);display:block;color:#729178;font-weight:800;font-size:.82rem;margin-bottom:12px}.step p{font-size:.94rem;color:var(--muted)}.prose{max-width:780px}.prose h2{margin-top:1.8em}.prose h3{margin-top:1.2em}.prose ul{padding-left:22px}.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.fact{border:1px solid var(--line);border-radius:14px;padding:17px;background:#fff}.fact strong{display:block;color:#355f43}.fact p{font-size:.93rem;color:var(--muted);margin:7px 0 0}hr{border:0;border-top:1px solid var(--line);margin:22px 0}
-.form-grid{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:16px}.field{min-width:0}.field label{font-size:.87rem;font-weight:740;display:block;margin-bottom:5px}.field input,.field select,.field textarea{display:block;width:100%;border:1px solid #b7c8b9;border-radius:10px;background:white;padding:11px 12px;color:var(--ink);outline-offset:2px}.field textarea{min-height:96px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #8dac90;border-color:#50765c}.field .help{margin-top:4px;font-size:.77rem;color:var(--muted)}.field.full{grid-column:1/-1}.checkline{display:flex;align-items:flex-start;gap:10px;font-size:.86rem}.checkline input{width:auto;margin:5px 0}.button-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.map-frame{height:485px;width:100%;border-radius:0 0 15px 15px;z-index:0;background:#e6e9e3}.map-frame.small-map{height:355px;border-radius:12px}.map-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}.map-panel{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}.map-panel-header{padding:17px 19px}.map-panel-header h2{font-size:1.2rem;margin:0 0 5px}.map-panel-header p{margin:0;color:var(--muted);font-size:.87rem}.map-footer{border-top:1px solid var(--line);padding:9px 14px;font-size:.78rem;color:var(--muted);background:#fafbf8}.map-toolbar{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:14px;align-items:end;margin-bottom:18px}.map-toolbar .btn{width:100%}.map-toolbar input[type=range]{accent-color:#447a57}.map-toolbar .field input[type=range]{padding:7px 0;border:0;background:transparent}.map-warning{font-size:.84rem;margin-top:12px;color:#855a35}.map-error{background:#fff4e7;color:#81592d;padding:10px;border-radius:10px;font-size:.85rem}.coord{font-variant-numeric:tabular-nums;font-weight:700;color:var(--green)}.file-preview{margin-top:10px;max-height:160px;border-radius:10px;display:none}.collection-list{display:grid;gap:9px}.observation{display:flex;gap:12px;align-items:start;padding:13px 0;border-bottom:1px solid var(--line)}.observation:last-child{border-bottom:0}.observation-image{width:65px;height:65px;object-fit:cover;border-radius:9px;flex:none;background:#eef0e9}.observation strong{display:block;line-height:1.4}.observation .meta{font-size:.8rem;color:var(--muted)}.observation .btn{font-size:.78rem;min-height:32px;padding:4px 11px;margin-left:auto}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{padding:22px;border:1px solid var(--line);background:white;border-radius:16px}.stat strong{font-size:2rem;font-weight:730;display:block;line-height:1.3}.stat span{color:var(--muted);font-size:.82rem}.status-msg{font-size:.87rem;min-height:1.5em;color:#3c694a}.status-msg.warn{color:#965d2e}.inline-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.quiz-item{padding:21px 0;border-bottom:1px solid var(--line)}.quiz-item:last-child{border:0}.quiz-item label{display:block;margin:6px 0}.quiz-item input{accent-color:var(--green)}.quiz-result{padding:12px;border-radius:10px;background:#edf4e9;color:#315a40}.two-up{display:grid;grid-template-columns:1.3fr .7fr;gap:26px}.source-list{padding-left:20px}.source-list li{margin:12px 0}.leaflet-container{font-family:inherit}.leaflet-control-attribution{font-size:10px!important}.leaflet-popup-content img{max-width:200px;border-radius:8px;margin:6px 0}
-@media (max-width:1050px){.hero-grid{gap:26px}.nav a{padding:7px 8px;font-size:.81rem}.map-toolbar{grid-template-columns:2fr 1fr}.steps{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:800px){.hero-grid,.split,.map-compare,.two-up{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.hero{padding:45px 0}.map-frame{height:370px}.head-inner{min-height:64px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--warm);border-bottom:1px solid var(--line);padding:14px 20px;box-shadow:0 10px 20px #0001}.nav.open{display:flex;flex-direction:column;align-items:stretch}.nav a{font-size:.93rem}.footer-inner{grid-template-columns:1fr}.footer-links{align-items:flex-start}.page-hero{padding-top:32px}}
-@media (max-width:550px){.container{width:min(100% - 26px,1200px)}.cards,.steps,.facts,.form-grid,.map-toolbar,.stats{grid-template-columns:1fr}.card,.panel{padding:19px}.hero-card{padding:9px}.hero-art{min-height:230px}.section{padding:34px 0}.band{padding:25px}.field.full{grid-column:auto}.form-grid .field.full{grid-column:1}.map-frame{height:310px}.stat strong{font-size:1.55rem}.stats{grid-template-columns:repeat(3,1fr)}.stat{padding:12px;text-align:center}.stat span{font-size:.73rem}.button-row .btn{flex:1}}
-@media print{.site-header,.site-footer,.btn,.map-frame,.map-toolbar{display:none!important}body{background:white;color:black}.section,.page-hero{padding:12px 0}.panel,.card{border-color:#bbb;box-shadow:none}.container{width:100%}}
-
-/* Minimal Mistakes integration. The theme owns masthead, menu and footer. */
-.klimaspuren-app{width:100%;max-width:none;padding:0 0 2rem;background:var(--warm)}
-.klimaspuren-app .btn,.klimaspuren-app .btn:hover{text-decoration:none}
-.klimaspuren-app .btn:not(.secondary):not(.quiet){color:#fff}
-.klimaspuren-app .band .btn{color:var(--dark)!important}
-.klimaspuren-app .container{max-width:1200px}
-.klimaspuren-app .map-frame,.klimaspuren-app .map-panel{isolation:isolate}
-.page__footer .klimaspuren-footer-note{font-size:.85em;margin:.25em 0 1em}
-.masthead__inner-wrap{max-width:1200px}
-@media(max-width:800px){.klimaspuren-app .map-compare{grid-template-columns:1fr}}
+/* Klimaspuren – reduziertes Kurslayout auf Basis von Minimal Mistakes 4.28.0.
+   Version 0.3. Absichtlich sachlich: keine Dashboard-Karten, Farbverläufe oder Schatten. */
+:root{--ks-text:#30383b;--ks-muted:#657079;--ks-link:#276b66;--ks-line:#dcdfe1;--ks-light:#f6f7f6;--ks-accent:#406b60}
+html{scroll-behavior:smooth}
+body{background:#fff}
+.masthead{border-bottom:1px solid var(--ks-line);background:#fff}
+.masthead__inner-wrap{max-width:1360px;padding-top:.7em;padding-bottom:.7em}
+.greedy-nav{background:#fff}
+.greedy-nav .site-title{font-weight:600}
+.greedy-nav a{font-size:.88rem}
+.greedy-nav .visible-links a:before{background:var(--ks-accent)}
+.page__footer{background:var(--ks-light);border-top:1px solid var(--ks-line);color:var(--ks-muted)}
+.page__footer .klimaspuren-footer-note{font-size:.82rem;margin:.4em 0 1em}
+.page__footer .klimaspuren-footer-note a{color:var(--ks-link)}
+.course-shell{display:grid;grid-template-columns:225px minmax(0,1fr);gap:54px;max-width:1360px;margin:auto;padding:34px 32px 88px;align-items:start}
+.course-sidebar{border-right:1px solid var(--ks-line);min-width:0;align-self:stretch}
+.course-sidebar-inner{position:sticky;top:28px;padding-right:23px}
+.course-meta-label{font-size:.66rem!important;letter-spacing:.07em;color:#777!important;font-weight:700;margin:.25rem 0 .5rem!important}
+.course-title{font-size:1.2rem;font-weight:700;line-height:1.2;display:block;text-decoration:none!important;color:#263a38!important}
+.course-subtitle{font-size:.82rem;color:var(--ks-muted);line-height:1.5;margin:.45rem 0 1.65rem!important}
+.course-nav-heading{font-weight:700;font-size:.77rem;margin:0 0 .3rem!important;color:var(--ks-text)}
+.course-toc ol{list-style:none;margin:0 0 1.6rem;padding:0}
+.course-toc li{margin:0;border-bottom:1px solid #f0f0f0}
+.course-toc a{display:block;padding:.65rem .4rem .65rem .7rem;border-left:2px solid transparent;font-size:.83rem;color:#4d575b;line-height:1.3;text-decoration:none}
+.course-toc a:hover{color:var(--ks-link);background:#f6f8f7}
+.course-toc a.active{color:#1f514a;font-weight:700;border-left-color:var(--ks-accent);background:#f4f7f5}
+.course-sidebar-note{padding-top:1.05rem;border-top:1px solid var(--ks-line);font-size:.75rem;color:var(--ks-muted);line-height:1.55}
+.course-sidebar-note strong{display:block;font-size:.79rem;color:var(--ks-text);font-weight:650}
+.course-sidebar-note p{margin:.3rem 0 0}
+.klimaspuren-app{width:100%;min-width:0;max-width:none;font-size:.96rem;line-height:1.72;color:var(--ks-text)}
+.klimaspuren-app *{box-sizing:border-box}
+.klimaspuren-app a{color:var(--ks-link)}
+.klimaspuren-app a:hover{color:#184a44}
+.klimaspuren-app h1,.klimaspuren-app h2,.klimaspuren-app h3{line-height:1.25;color:#262e30;font-weight:630;letter-spacing:-.012em}
+.klimaspuren-app h1{font-size:clamp(1.85rem,2.8vw,2.5rem);margin:.45rem 0 1rem}
+.klimaspuren-app h2{font-size:1.35rem;margin:0 0 1rem}
+.klimaspuren-app h3{font-size:1.05rem;margin:.35rem 0 .6rem}
+.klimaspuren-app p{margin:.25rem 0 .9rem}
+.klimaspuren-app ul,.klimaspuren-app ol{padding-left:1.4rem;margin:.4rem 0 1rem}
+.klimaspuren-app li{margin-bottom:.3rem}
+.klimaspuren-app img,.klimaspuren-app svg{max-width:100%}
+.klimaspuren-app button,.klimaspuren-app input,.klimaspuren-app textarea,.klimaspuren-app select{font:inherit}
+.klimaspuren-app button{cursor:pointer}
+.klimaspuren-app .container{width:100%;max-width:none;margin:0;padding:0}
+.klimaspuren-app .page-hero{margin:0 0 1.55rem;padding:0 0 1.35rem;border-bottom:1px solid var(--ks-line)}
+.klimaspuren-app .page-hero .intro{margin-bottom:0}
+.klimaspuren-app .eyebrow{display:block;color:#707b7d;font-size:.72rem;font-weight:600;letter-spacing:0;text-transform:none;margin:0 0 .65rem}
+.klimaspuren-app .intro{max-width:850px;font-size:1.02rem;line-height:1.65;color:#526066}
+.klimaspuren-app .section{padding:0 0 1.2rem;margin:0 0 1.35rem;border-bottom:1px solid #eeeeee}
+.klimaspuren-app .section.tight{padding:0 0 1rem;margin:0 0 1.2rem}
+.klimaspuren-app .section:last-child{border-bottom:none}
+.klimaspuren-app .section-intro{font-size:.87rem;color:var(--ks-muted)}
+.klimaspuren-app .prose{max-width:820px}
+.klimaspuren-app .prose h2{margin:.2rem 0 .75rem}
+.klimaspuren-app .prose h3{margin:1.25rem 0 .55rem}
+.klimaspuren-app .small{font-size:.88rem}
+.klimaspuren-app .mini{font-size:.79rem;color:var(--ks-muted)}
+.klimaspuren-app .muted{color:var(--ks-muted)}
+.klimaspuren-app .space-top{margin-top:1rem}
+.klimaspuren-app .space-large{margin-top:2rem}
+.klimaspuren-app hr{height:0;border:0;border-top:1px solid var(--ks-line);margin:1.1rem 0}
+.klimaspuren-app .callout{background:#f7f8f7;border-left:3px solid #7f9e91;padding:13px 18px;margin:1.15rem 0;font-size:.89rem;line-height:1.65;color:#394449}
+.klimaspuren-app .callout.warning{border-left-color:#b69a6e;background:#faf9f5}
+.klimaspuren-app .table-scroll{width:100%;overflow-x:auto}
+.klimaspuren-app .course-table{width:100%;border-collapse:collapse;table-layout:auto;font-size:.88rem;margin:.85rem 0 1.25rem}
+.klimaspuren-app .course-table th,.klimaspuren-app .course-table td{padding:.76rem .8rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--ks-line);background:transparent}
+.klimaspuren-app .course-table th{border-top:1px solid var(--ks-line);background:#f6f7f7;font-weight:650;color:#2e383b}
+.klimaspuren-app .course-table tr:hover td{background:#fbfcfb}
+.klimaspuren-app .module-table td:first-child{width:31%;font-weight:600}
+.klimaspuren-app .module-table td:last-child{width:20%;color:var(--ks-muted)}
+.klimaspuren-app .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:25px;align-items:start}
+.klimaspuren-app .panel{background:#fff;border:1px solid var(--ks-line);border-radius:2px;padding:20px 22px;box-shadow:none}
+.klimaspuren-app .panel.flat{box-shadow:none}
+.klimaspuren-app .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
+.klimaspuren-app .fact{border:0;border-top:1px solid var(--ks-line);border-radius:0;padding:14px 0;background:none}
+.klimaspuren-app .fact strong{display:block;color:#303b3e;font-weight:650}
+.klimaspuren-app .fact p{color:#4c575a;font-size:.9rem;margin:.3rem 0 0}
+.klimaspuren-app .btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.49rem .9rem;background:#406d64;border:1px solid #406d64;color:#fff!important;border-radius:3px;font-size:.86rem;font-weight:600;min-height:38px;text-decoration:none;box-shadow:none;line-height:1.3;cursor:pointer}
+.klimaspuren-app .btn:hover{color:#fff!important;background:#2d524b;text-decoration:none}
+.klimaspuren-app .btn.secondary,.klimaspuren-app .btn.quiet{color:#2f6258!important;background:#fff;border-color:#9caba7}
+.klimaspuren-app .btn.secondary:hover,.klimaspuren-app .btn.quiet:hover{background:#f4f7f6;color:#244e45!important}
+.klimaspuren-app .btn.smallbtn{min-height:33px;padding:.35rem .65rem;font-size:.79rem}
+.klimaspuren-app .button-row,.klimaspuren-app .inline-tools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.klimaspuren-app .flex-row{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.klimaspuren-app .field{min-width:0}
+.klimaspuren-app .field label{display:block;font-size:.82rem;font-weight:630;margin-bottom:.33rem}
+.klimaspuren-app .field input:not([type="checkbox"]):not([type="radio"]),.klimaspuren-app .field select,.klimaspuren-app .field textarea{display:block;width:100%;padding:.5rem .6rem;border:1px solid #b9c3c2;border-radius:3px;background:#fff;color:#333;font-size:.86rem}
+.klimaspuren-app .field input[type="range"]{accent-color:#406d64}
+.klimaspuren-app .field textarea{min-height:96px;resize:vertical}
+.klimaspuren-app .field .help{font-size:.76rem;color:var(--ks-muted);margin:.35rem 0 0}
+.klimaspuren-app .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+.klimaspuren-app .field.full{grid-column:1/-1}
+.klimaspuren-app .checkline{display:flex;align-items:flex-start;gap:9px;font-size:.84rem;font-weight:400}
+.klimaspuren-app .checkline input{width:auto;margin-top:.3rem}
+.klimaspuren-app .checkline span{font-weight:400}
+.klimaspuren-app .map-toolbar{display:grid;grid-template-columns:minmax(200px,2fr) minmax(120px,1fr) minmax(120px,1fr) auto;gap:12px;align-items:end;margin:0 0 17px}
+.klimaspuren-app .map-compare{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.klimaspuren-app .map-panel{background:#fff;border:1px solid var(--ks-line);border-radius:2px;min-width:0;overflow:hidden}
+.klimaspuren-app .map-panel-header{padding:12px 14px;border-bottom:1px solid var(--ks-line);min-height:116px}
+.klimaspuren-app .map-panel-header h2{font-size:1.05rem;margin:0 0 .25rem}
+.klimaspuren-app .map-panel-header p{font-size:.79rem;line-height:1.5;color:var(--ks-muted);margin:0}
+.klimaspuren-app .map-panel-header .eyebrow{font-size:.72rem;margin:0 0 .35rem}
+.klimaspuren-app .map-frame{width:100%;height:420px;background:#e8ece9;z-index:0;border-radius:0;isolation:isolate}
+.klimaspuren-app .map-frame.small-map{height:360px}
+.klimaspuren-app .map-footer{border-top:1px solid var(--ks-line);padding:7px 10px;font-size:.75rem;color:var(--ks-muted)}
+.klimaspuren-app .map-warning{font-size:.82rem;line-height:1.55;color:#745f40;margin:.8rem 0 0}
+.klimaspuren-app .map-error{font-size:.82rem;color:#765e42;background:#faf6f0;padding:.5rem}
+.klimaspuren-app .coord{font-variant-numeric:tabular-nums;color:#315b54;font-weight:600}
+.klimaspuren-app .file-preview{display:none;max-height:165px;margin:.6rem 0;max-width:100%;object-fit:contain}
+.klimaspuren-app .collection-list{display:grid;gap:0}
+.klimaspuren-app .observation{display:flex;gap:12px;align-items:start;padding:13px 0;border-bottom:1px solid var(--ks-line)}
+.klimaspuren-app .observation-image{width:68px;height:68px;object-fit:cover;flex:none}
+.klimaspuren-app .observation strong{display:block;line-height:1.4;font-size:.88rem}
+.klimaspuren-app .observation .meta{font-size:.79rem;color:var(--ks-muted)}
+.klimaspuren-app .observation .btn{margin-left:auto}
+.klimaspuren-app .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--ks-line);border-bottom:1px solid var(--ks-line)}
+.klimaspuren-app .stat{padding:13px 14px 12px;background:transparent;border-right:1px solid var(--ks-line);border-radius:0}
+.klimaspuren-app .stat:last-child{border-right:0}
+.klimaspuren-app .stat strong{display:block;font-size:1.45rem;font-weight:600;line-height:1.2}
+.klimaspuren-app .stat span{font-size:.76rem;color:var(--ks-muted)}
+.klimaspuren-app .status-msg{font-size:.84rem;min-height:1.2rem;color:#315f52;margin:.4rem 0}
+.klimaspuren-app .status-msg.warn{color:#82623b}
+.klimaspuren-app .quiz-item{margin:0 0 1rem;padding:0!important;border:0!important}
+.klimaspuren-app .quiz-item legend{font-size:.92rem;margin-bottom:.5rem}
+.klimaspuren-app .quiz-item label{display:block;font-size:.88rem;line-height:1.6;padding:.2rem 0;font-weight:400}
+.klimaspuren-app .quiz-item input{margin-right:.5rem}
+.klimaspuren-app .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.klimaspuren-app .source-list{padding-left:1.3rem}
+@media(max-width:1150px){.course-shell{grid-template-columns:190px minmax(0,1fr);gap:28px;padding:24px}.course-sidebar-inner{padding-right:15px}.klimaspuren-app .map-toolbar{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.course-shell{display:block;padding:18px 20px 45px}.course-sidebar{border-right:0;border-bottom:1px solid var(--ks-line);margin-bottom:25px}.course-sidebar-inner{position:static;padding:0 0 15px}.course-sidebar-note{display:none}.course-subtitle{margin-bottom:.7rem!important}.course-toc ol{display:flex;overflow-x:auto;gap:5px;margin:0;padding-bottom:3px}.course-toc li{border:0;white-space:nowrap}.course-toc a{border-left:0;border-bottom:2px solid transparent;padding:.5rem .6rem}.course-toc a.active{border-bottom-color:var(--ks-accent);border-left:0}.course-nav-heading{display:none}.klimaspuren-app .map-compare{grid-template-columns:1fr}.klimaspuren-app .map-panel-header{min-height:0}.klimaspuren-app .map-frame{height:370px}}
+@media(max-width:620px){.course-shell{padding:14px 16px 35px}.klimaspuren-app h1{font-size:1.7rem}.klimaspuren-app .split,.klimaspuren-app .facts,.klimaspuren-app .form-grid,.klimaspuren-app .map-toolbar{grid-template-columns:1fr}.klimaspuren-app .field.full{grid-column:auto}.klimaspuren-app .panel{padding:14px}.klimaspuren-app .course-table{font-size:.79rem;min-width:560px}.klimaspuren-app .map-frame{height:300px}.klimaspuren-app .stats .stat{padding:8px}.klimaspuren-app .stat strong{font-size:1.14rem}}
+@media print{.masthead,.page__footer,.course-sidebar,.klimaspuren-app .btn,.klimaspuren-app .map-frame,.klimaspuren-app .map-toolbar{display:none!important}.course-shell{display:block;padding:0;max-width:none}.klimaspuren-app .section{break-inside:avoid}}
+.klimaspuren-app .course-definitions{margin:1rem 0 1.1rem}
+.klimaspuren-app .course-definitions dt{font-weight:650;margin:.75rem 0 .15rem}
+.klimaspuren-app .course-definitions dd{margin:0 0 .75rem;padding-left:0;color:#4e595c}
+.klimaspuren-app .field label.checkline{display:flex;align-items:flex-start}
+.klimaspuren-app .field input[type="range"]{border:0;padding:.4rem 0;background:transparent}

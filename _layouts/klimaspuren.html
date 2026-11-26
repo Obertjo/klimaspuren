@@ -1,6 +1,30 @@
 ---
 layout: default
 ---
-<main id="main" class="klimaspuren-app" role="main" tabindex="-1">
-  {{ content }}
-</main>
+<div class="course-shell">
+  <aside class="course-sidebar" aria-label="Navigation des Lernmoduls">
+    <div class="course-sidebar-inner">
+      <p class="course-meta-label">OPEN EDUCATIONAL RESOURCE</p>
+      <a class="course-title" href="{{ '/' | relative_url }}">Klimaspuren</a>
+      <p class="course-subtitle">Grünstrukturen, Versiegelung und Stadtklima</p>
+      <nav class="course-toc" aria-label="Kapitelübersicht">
+        <p class="course-nav-heading">Inhalt</p>
+        <ol>
+          <li><a {% if page.nav == 'home' %}class="active" aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Einführung</a></li>
+          <li><a {% if page.nav == 'learn' %}class="active" aria-current="page"{% endif %} href="{{ '/klimawissen/' | relative_url }}">Klimatische Grundlagen</a></li>
+          <li><a {% if page.nav == 'map' %}class="active" aria-current="page"{% endif %} href="{{ '/kartenvergleich/' | relative_url }}">Kartenvergleich</a></li>
+          <li><a {% if page.nav == 'capture' %}class="active" aria-current="page"{% endif %} href="{{ '/erfassen/' | relative_url }}">Eigene Erfassung</a></li>
+          <li><a {% if page.nav == 'analysis' %}class="active" aria-current="page"{% endif %} href="{{ '/auswertung/' | relative_url }}">Auswertung</a></li>
+          <li><a {% if page.nav == 'resources' %}class="active" aria-current="page"{% endif %} href="{{ '/materialien/' | relative_url }}">Materialien und Quellen</a></li>
+        </ol>
+      </nav>
+      <div class="course-sidebar-note">
+        <strong>Für die Lehre</strong>
+        <p>Das Modul kann in kleinen Seminaren, bei Exkursionen oder zur selbstständigen Erkundung genutzt werden.</p>
+      </div>
+    </div>
+  </aside>
+  <main id="main" class="klimaspuren-app" role="main" tabindex="-1">
+    {{ content }}
+  </main>
+</div>

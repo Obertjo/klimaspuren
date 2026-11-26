@@ -1,14 +1,13 @@
-# Minimal Mistakes Hauptnavigation
 main:
-  - title: "Start"
+  - title: "Einführung"
     url: "/"
   - title: "Klimawissen"
     url: "/klimawissen/"
   - title: "Kartenvergleich"
     url: "/kartenvergleich/"
-  - title: "Erfassen"
+  - title: "Erfassung"
     url: "/erfassen/"
-  - title: "Auswerten"
+  - title: "Auswertung"
     url: "/auswertung/"
   - title: "Materialien"
     url: "/materialien/"

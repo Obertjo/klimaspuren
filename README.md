@@ -16,9 +16,15 @@ Website: `https://obertjo.github.io/klimaspuren/`
 
 Das Repository in GitHub öffnen und `.` drücken (oder `https://github.dev/Obertjo/klimaspuren` verwenden). Im Web-Editor den aktualisierten Inhalt des ZIP-Projekts in das Repository übernehmen, gelöschte Altdateien ebenfalls löschen, unter **Source Control** alle Änderungen stagen und committen. Der Web-Editor benötigt keine lokale Installation.
 
+## Gestaltung (Version 0.3)
+
+Die Oberfläche orientiert sich an klassischen universitären Kurswebseiten: kapitelorientierte Seitenleiste, sachlicher Titelbereich, Fließtexte, tabellarischer Modulüberblick und einfache Arbeitsaufträge. Keine großflächige Hero-Grafik, keine dekorativen Kacheln, Farbverläufe oder Schatten. Die Karte und die Erfassung bleiben eigenständige Funktionsseiten.
+
+**Wichtig bei der Aktualisierung eines bestehenden GitHub-Repositories:** Die `update.zip` enthält nur veränderte Dateien; die `komplett.zip` enthält das vollständige Projekt. Die ZIP-Dateien jeweils entpacken und die enthaltenen Dateien und Unterordner ins **Hauptverzeichnis** hochladen (bestehende Dateien mit identischen Pfaden überschreiben). Die Unterordner `assets`, `_layouts`, `_data` und die Kapitelordner müssen erhalten bleiben. Bereits vorhandene zusätzliche Dateien wie `_layouts/default.html`, falls aus einer älteren Version, müssen weiterhin entfernt bleiben.
+
 ## Architektur
 
-- `_config.yml`: `remote_theme: "mmistakes/minimal-mistakes@4.28.0"` mit `mint`-Skin, deutscher Locale, GitHub-Pages-Basis-URL.
+- `_config.yml`: `remote_theme: "mmistakes/minimal-mistakes@4.28.0"` mit schlichtem `default`-Skin, deutscher Locale, GitHub-Pages-Basis-URL.
 - `_data/navigation.yml`: Navigation des Minimal-Mistakes-Mastheads.
 - `_layouts/klimaspuren.html`: eigenes Layout, erbt das Theme-Layout `default`; die alte eigene Datei `_layouts/default.html` wird nicht mehr benutzt.
 - `_includes/head/custom.html`: projektspezifische CSS und Leaflet-CSS.

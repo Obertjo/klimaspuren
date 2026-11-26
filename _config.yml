@@ -1,10 +1,10 @@
 # Klimaspuren – Jekyll / GitHub Pages / Minimal Mistakes 4.28.0
 # Repository: https://github.com/Obertjo/klimaspuren
 remote_theme: "mmistakes/minimal-mistakes@4.28.0"
-minimal_mistakes_skin: "mint"
+minimal_mistakes_skin: "default"
 locale: "de-DE"
 title: "Klimaspuren"
-subtitle: "Grünstrukturen und Stadtklima entdecken"
+subtitle: "Grünstrukturen und Versiegelung im Stadtklima"
 description: "Offenes Lernangebot über Grünstrukturen, Versiegelung und Stadtklima mit Kartenvergleich und eigener Beobachtungserfassung."
 url: "https://obertjo.github.io"
 baseurl: "/klimaspuren"

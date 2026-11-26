@@ -1,22 +1,34 @@
 ---
 layout: klimaspuren
 nav: learn
-title: Klimawissen
+title: Klimatische Grundlagen
 script: /assets/js/quiz.js
 ---
-<section class="page-hero"><div class="container"><span class="eyebrow">01 / Klimawissen</span><h1>Was hat die Oberfläche mit Stadtklima zu tun?</h1><p class="intro">Bevor wir im Gelände kartieren, schauen wir auf die physikalischen Prozesse hinter urbaner Erwärmung, Verdunstung und Beschattung.</p></div></section>
-<section class="section tight"><div class="container"><div class="facts">
-<div class="fact"><strong>☀ Strahlung &amp; Wärme</strong><p>Oberflächen reflektieren einen Teil der kurzwelligen Sonnenstrahlung und nehmen einen anderen Teil auf. Ihre Eigenschaften beeinflussen die Erwärmung und die Abgabe von Wärme.</p></div>
-<div class="fact"><strong>♧ Verdunstung</strong><p>Ist Wasser verfügbar, kann ein Teil der Energie für Verdunstung statt für fühlbare Erwärmung verwendet werden. Pflanzen tragen über Transpiration dazu bei.</p></div>
-<div class="fact"><strong>◒ Beschattung</strong><p>Baumkronen und Gebäude können direkte Sonneneinstrahlung auf Wege und Plätze verringern. Die Wirkung ändert sich mit Sonnenstand und Jahreszeit.</p></div>
-<div class="fact"><strong>↝ Luftaustausch</strong><p>Bebauung und Vegetation verändern die bodennahe Strömung. Die tatsächlichen Auswirkungen hängen unter anderem von Wind, Geometrie und Maßstab ab.</p></div>
-</div></div></section>
-<section class="section tight"><div class="container split"><div class="prose"><span class="eyebrow">Drei Dinge auseinanderhalten</span><h2>Landbedeckung ist kein Thermometer.</h2><p>Ein Orthofoto zeigt unter anderem Baumkronen, Straßen und Grünflächen. Daraus lassen sich Standortmerkmale beschreiben. Die tatsächliche <strong>Lufttemperatur</strong>, <strong>Oberflächentemperatur</strong> und <strong>thermische Behaglichkeit</strong> sind jedoch unterschiedliche Größen.</p><p>Auch eine Klimafunktionskarte ist keine Live-Wettermessung. Sie beruht auf Daten, Annahmen und/oder Modellrechnungen, die anhand ihrer Legende und Dokumentation eingeordnet werden müssen.</p><div class="callout"><strong>Winterperspektive:</strong> Bäume und versiegelte Flächen sind gut kartierbar. Der Schatten laubabwerfender Bäume ist im Winter jedoch nicht repräsentativ für den Sommer.</div></div>
-<div class="panel flat"><h3>Begriffe für die Kartierung</h3><p><strong>Grünstruktur:</strong> Sichtbare Vegetation wie Bäume, Hecken, Grünstreifen oder Rasen.</p><hr><p><strong>Versiegelung:</strong> Bodenoberflächen, die durch bauliche Materialien vollständig oder weitgehend von direktem Wasseraustausch abgeschirmt sind; Pflaster kann je nach Bauweise unterschiedlich durchlässig sein.</p><hr><p><strong>Vegetationsdefizit:</strong> Fachspezifische Bewertung in einer Karte; kein automatisch gemessener Versiegelungsgrad.</p><hr><p><strong>Sky View Factor:</strong> Anteil des Himmels, der von einem Standort aus sichtbar ist, nicht die tatsächliche Sonnenbestrahlung zu jeder Uhrzeit.</p></div></div></section>
-<section class="section tight"><div class="container"><div class="panel" style="max-width:850px"><span class="eyebrow">Wissen prüfen</span><h2 style="font-size:1.75rem">Drei Fragen zur Einordnung</h2>
-<form id="quiz-form">
-<fieldset class="quiz-item" style="border:0"><legend><strong>1. Was lässt sich aus einem Orthofoto unmittelbar erkennen?</strong></legend><label><input type="radio" name="q1" value="a" required> Die Lufttemperatur in zwei Metern Höhe</label><label><input type="radio" name="q1" value="b"> Sichtbare Grünstrukturen und Oberflächen</label><label><input type="radio" name="q1" value="c"> Die gefühlte Temperatur aller Passanten</label></fieldset>
-<fieldset class="quiz-item" style="border:0"><legend><strong>2. Warum kann Vegetation zur Kühlung beitragen?</strong></legend><label><input type="radio" name="q2" value="a" required> Durch Verdunstung und Verschattung</label><label><input type="radio" name="q2" value="b"> Weil jeder Baum dieselbe Lufttemperatur erzeugt</label><label><input type="radio" name="q2" value="c"> Nur durch seine grüne Farbe</label></fieldset>
-<fieldset class="quiz-item" style="border:0"><legend><strong>3. Was zeigt der Sky View Factor?</strong></legend><label><input type="radio" name="q3" value="a" required> Einen exakten Schattenverlauf</label><label><input type="radio" name="q3" value="b"> Die mittlere Lufttemperatur</label><label><input type="radio" name="q3" value="c"> Den sichtbaren Himmelsanteil</label></fieldset>
-<button class="btn space-top" type="submit">Antworten überprüfen</button><div class="space-top" id="quiz-result" role="status" aria-live="polite"></div>
-</form></div></div></section>
+<header class="page-hero"><div class="container"><p class="eyebrow">Kapitel 01 · Grundlagen</p><h1>Grünstrukturen, Versiegelung und Stadtklima</h1><p class="intro">Welche Prozesse beeinflussen die Erwärmung und den Wasserhaushalt städtischer Oberflächen? Dieses Kapitel stellt die Begriffe bereit, die für die Kartierung und Interpretation gebraucht werden.</p></div></header>
+<section class="section"><div class="container prose"><h2>Oberflächen und Energiehaushalt</h2>
+<p>Versiegelte Flächen, Vegetation und offene Böden unterscheiden sich unter anderem in ihrer Reflexion und Speicherung von Energie, ihrer Wasserverfügbarkeit und ihrer Wirkung auf die bodennahe Luft. Diese Unterschiede beeinflussen das städtische Mikroklima, lassen sich aus der sichtbaren Landbedeckung allein aber nicht vollständig quantifizieren.</p>
+<div class="table-scroll"><table class="course-table"><thead><tr><th>Prozess</th><th>Bedeutung für die Kartierung</th></tr></thead><tbody>
+<tr><td><strong>Strahlung und Wärme</strong></td><td>Materialeigenschaften beeinflussen die Aufnahme, Reflexion und Abgabe von Strahlung sowie die Wärmespeicherung.</td></tr>
+<tr><td><strong>Verdunstung</strong></td><td>Ist Wasser verfügbar, kann Energie in die Verdunstung von Bodenwasser und Transpiration der Pflanzen fließen.</td></tr>
+<tr><td><strong>Beschattung</strong></td><td>Bäume und Gebäude können die direkte Sonneneinstrahlung begrenzen. Die Wirkung verändert sich mit Sonnenstand und Belaubung.</td></tr>
+<tr><td><strong>Luftaustausch</strong></td><td>Gebäude und Vegetation beeinflussen Wind und Turbulenz; Ausmaß und Richtung der Wirkung sind standort- und situationsabhängig.</td></tr>
+</tbody></table></div></div></section>
+<section class="section"><div class="container prose"><h2>Beobachtung und klimatologische Aussage</h2>
+<p>Ein Orthofoto eignet sich zur Identifikation von Bäumen, Wegen, offenen Flächen und bebauten Bereichen. Es zeigt dagegen nicht unmittelbar die <strong>Lufttemperatur</strong>, <strong>Oberflächentemperatur</strong> oder <strong>thermische Behaglichkeit</strong>. Diese Größen müssen getrennt betrachtet werden.</p>
+<p>Eine Klimafunktionskarte stellt ebenfalls keine aktuelle Wetterbeobachtung dar. Je nach Karte handelt es sich um modellierte Größen oder abgeleitete Klassifizierungen, deren Aussagekraft von Eingabedaten, Modellannahmen und räumlicher Auflösung abhängt.</p>
+<div class="callout"><strong>Jahreszeit beachten:</strong> Bäume und Bodenbeläge können auch im Winter erfasst werden. Die winterliche Beschattung laubabwerfender Bäume ist jedoch nicht mit den sommerlichen Bedingungen gleichzusetzen.</div>
+<h3>Begriffe für die Erfassung</h3>
+<dl class="course-definitions">
+<dt>Grünstruktur</dt><dd>Sichtbare Vegetation, beispielsweise Straßenbäume, Hecken, Grünstreifen oder Rasenflächen.</dd>
+<dt>Versiegelung</dt><dd>Baulich überformte Bodenoberflächen, die den Wasser- und Stoffaustausch mit dem Untergrund teilweise oder weitgehend unterbinden können. Bei Pflasterflächen hängt die Durchlässigkeit von der konkreten Bauweise ab.</dd>
+<dt>Vegetationsdefizit</dt><dd>Eine fachkartografische Bewertung mit eigener Datengrundlage und Definition; nicht gleichzusetzen mit dem gemessenen Versiegelungsgrad.</dd>
+<dt>Sky View Factor</dt><dd>Maß für den sichtbaren Himmelsanteil an einem Ort. Es ist keine direkte Karte der Sonneneinstrahlung zu einer bestimmten Uhrzeit.</dd>
+</dl></div></section>
+<section class="section"><div class="container prose"><h2>Wissensüberprüfung</h2><p>Die folgenden Fragen dienen der Vorbereitung auf die Kartenarbeit. Die Antworten werden nur im Browser überprüft.</p>
+<form id="quiz-form" class="quiz-form">
+<fieldset class="quiz-item"><legend><strong>1. Was lässt sich aus einem Orthofoto unmittelbar erkennen?</strong></legend><label><input type="radio" name="q1" value="a" required> Die Lufttemperatur in zwei Metern Höhe</label><label><input type="radio" name="q1" value="b"> Sichtbare Grünstrukturen und Oberflächen</label><label><input type="radio" name="q1" value="c"> Die gefühlte Temperatur aller Passanten</label></fieldset>
+<fieldset class="quiz-item"><legend><strong>2. Warum kann Vegetation zur Kühlung beitragen?</strong></legend><label><input type="radio" name="q2" value="a" required> Durch Verdunstung und Verschattung</label><label><input type="radio" name="q2" value="b"> Weil jeder Baum dieselbe Lufttemperatur erzeugt</label><label><input type="radio" name="q2" value="c"> Nur durch seine grüne Farbe</label></fieldset>
+<fieldset class="quiz-item"><legend><strong>3. Was zeigt der Sky View Factor?</strong></legend><label><input type="radio" name="q3" value="a" required> Einen exakten Schattenverlauf</label><label><input type="radio" name="q3" value="b"> Die mittlere Lufttemperatur</label><label><input type="radio" name="q3" value="c"> Den sichtbaren Himmelsanteil</label></fieldset>
+<button class="btn" type="submit">Antworten überprüfen</button><div class="space-top" id="quiz-result" role="status" aria-live="polite"></div>
+</form>
+<p class="space-top"><a href="{{ '/kartenvergleich/' | relative_url }}">Weiter zu Kapitel 02: Kartenvergleich →</a></p></div></section>
