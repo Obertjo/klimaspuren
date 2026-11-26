@@ -70,11 +70,116 @@
   const info = document.getElementById('map-layer-info');
   let climate = null;
   let revision = 0;
+
+  // Legendenbilder nach OGC-WMS-Standard. Falls erlaubt, werden die im
+  // GetCapabilities dokumentierten LegendURL- und Abstract-Angaben bevorzugt.
+  const legendName = document.getElementById('climate-legend-name');
+  const legendLink = document.getElementById('climate-legend-link');
+  const legendStatus = document.getElementById('climate-legend-status');
+  const legendWrap = document.getElementById('climate-legend-image-wrap');
+  const legendImage = document.getElementById('climate-legend-image');
+  const detailsTitle = document.getElementById('climate-dataset-title');
+  const detailsDesc = document.getElementById('climate-dataset-description');
+  const detailsInterpretation = document.getElementById('climate-dataset-interpretation');
+  const detailsLimitation = document.getElementById('climate-dataset-limitation');
+  const detailsLayer = document.getElementById('climate-dataset-layer');
+  const capsLink = document.getElementById('climate-dataset-capabilities');
+  const serviceDescription = document.getElementById('climate-service-description');
+  const serviceAbstract = document.getElementById('climate-service-abstract');
+  const serviceMetadata = new Map();
+  const wmsURL = (parameters) => {
+    const u = new URL(cfg.climateWms, window.location.href);
+    Object.entries(parameters).forEach(([k, v]) => u.searchParams.set(k, v));
+    return u.href;
+  };
+  const capabilitiesUrl = wmsURL({SERVICE:'WMS', VERSION:'1.3.0', REQUEST:'GetCapabilities'});
+  capsLink.href = capabilitiesUrl;
+  const standardLegendUrl = key => wmsURL({ SERVICE:'WMS', VERSION:'1.3.0', REQUEST:'GetLegendGraphic', FORMAT:'image/png', LAYER:key });
+
+  function updateDatasetInfo(key) {
+    const theme = cfg.climateLayers.find(x => x.key === key);
+    const metadata = serviceMetadata.get(key);
+    const display = theme?.label || key;
+    legendName.textContent = display;
+    detailsTitle.textContent = display;
+    detailsDesc.textContent = theme?.description || 'Für diesen Layer ist noch keine Kurzbeschreibung hinterlegt.';
+    detailsInterpretation.textContent = theme?.interpretation || theme?.question || '';
+    detailsLimitation.textContent = theme?.limitation || 'Für die Interpretation die originale Legende und die Metadaten heranziehen.';
+    detailsLayer.textContent = key;
+    if (metadata?.abstract) {
+      serviceAbstract.textContent = metadata.abstract;
+      serviceDescription.hidden = false;
+    } else {
+      serviceAbstract.textContent = '';
+      serviceDescription.hidden = true;
+    }
+
+    const generatedUrl = standardLegendUrl(key);
+    // Externe LegendURL nur mit HTTP(S) zulassen, um defekte/metadatenfremde Adressen abzufangen.
+    let candidates = [generatedUrl];
+    if (metadata?.legendUrl) {
+      try {
+        const candidate = new URL(metadata.legendUrl, cfg.climateWms);
+        if (window.location.protocol === 'https:' && candidate.protocol === 'http:') candidate.protocol = 'https:';
+        if (['https:', 'http:'].includes(candidate.protocol)) candidates = [candidate.href, generatedUrl];
+      } catch (_) { /* Standard-URL bleibt verfügbar. */ }
+    }
+    let attempt = 0;
+    const requestedKey = key;
+    legendImage.onload = () => {
+      if (select.value !== requestedKey) return;
+      legendWrap.hidden = false;
+      legendStatus.hidden = true;
+    };
+    legendImage.onerror = () => {
+      if (select.value !== requestedKey) return;
+      attempt += 1;
+      if (attempt < candidates.length) {
+        legendImage.src = candidates[attempt];
+        legendLink.href = candidates[attempt];
+      } else {
+        legendWrap.hidden = true;
+        legendStatus.hidden = false;
+        legendStatus.textContent = 'Der Dienst liefert derzeit kein darstellbares Legendenbild. Bitte die Legende beim Kartendienst prüfen.';
+      }
+    };
+    legendWrap.hidden = true;
+    legendStatus.hidden = false;
+    legendStatus.textContent = 'Legende wird vom WMS angefordert …';
+    legendImage.alt = 'Originallegende für ' + display + ' aus dem Klimaplanatlas Frankfurt 2026';
+    legendLink.href = candidates[0];
+    legendImage.src = candidates[0];
+  }
+
+  // Cross-Origin-GetCapabilities kann vom Server gesperrt sein. Die Seite bleibt
+  // dank hinterlegter Kurztexte und GetLegendGraphic auch ohne XML-Zugriff nutzbar.
+  async function loadLayerMetadata() {
+    try {
+      const response = await fetch(capabilitiesUrl, {mode:'cors'});
+      if (!response.ok) return;
+      const xmlText = await response.text();
+      const doc = new DOMParser().parseFromString(xmlText, 'application/xml');
+      if (doc.querySelector('parsererror')) return;
+      for (const layer of doc.getElementsByTagName('Layer')) {
+        const direct = (node, name) => [...node.children].find(el => el.localName === name);
+        const name = direct(layer, 'Name')?.textContent?.trim();
+        if (!name || !cfg.climateLayers.some(item => item.key === name)) continue;
+        const abstract = direct(layer, 'Abstract')?.textContent?.trim() || '';
+        const style = direct(layer, 'Style');
+        const legend = style ? [...style.getElementsByTagName('*')].find(el => el.localName === 'OnlineResource') : null;
+        const legendUrl = legend?.getAttribute('xlink:href') || legend?.getAttributeNS('http://www.w3.org/1999/xlink', 'href') || '';
+        serviceMetadata.set(name, {abstract, legendUrl});
+      }
+      updateDatasetInfo(select.value);
+    } catch (_) { /* CORS/Netzwerkfehler sind für die Zusatzinformationen nicht kritisch. */ }
+  }
+
   function updateClimate() {
     const rev = ++revision;
     const key = select.value;
     if (climate) { right.removeLayer(climate); climate = null; }
     const theme = cfg.climateLayers.find(x => x.key === key);
+    updateDatasetInfo(key);
     document.getElementById('prompt-title').textContent = 'Frage: ' + (theme?.label || 'Klimaplanatlas');
     document.getElementById('prompt-body').textContent = theme?.question || 'Welche räumlichen Unterschiede sind sichtbar?';
     if (show.value === 'off') {
@@ -112,4 +217,5 @@
     refresh();
   });
   updateClimate();
+  loadLayerMetadata();
 })();

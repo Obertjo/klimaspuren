@@ -69,3 +69,11 @@ Ruby + Bundler erforderlich: `bundle install` und `bundle exec jekyll serve`. Be
 Die Darstellung von Leaflet wurde robuster gemacht: zusätzliches CSS-CDN, lokale Leaflet-Kernstile, Karten-Neuvermessung per ResizeObserver und Statusmeldungen bei WMS-Ausfällen. Die Orthofotoebene links und Klimaplanatlasebene rechts sind getrennt. Das hessische Orthofoto nutzt den veröffentlichten WMS `he_dop_rgb` (Hessische Verwaltung für Bodenmanagement und Geoinformation).
 
 **Offene Punkte:** Externe Live-GetMap-Aufrufe konnten in der Entwicklungsumgebung nicht getestet werden. Die Klimaplanatlas-Layer und die vom WMS unterstützten Koordinatensysteme sind auf der veröffentlichten Website über die neuen GetCapabilities-Links zu prüfen.
+
+## Erweiterung v0.6 – Layerabhängige WMS-Legende und Datensatzinformationen
+
+Im Kapitel `kartenvergleich` zeigt Ansicht B unterhalb der Karte eine Legende für den jeweils ausgewählten Klimaplanatlas-Layer an. Die Legende wird mittels OGC-WMS-`GetLegendGraphic` direkt beim Anbieter angefordert. Falls der WMS beim Abruf seiner `GetCapabilities`-Datei im Browser einen `LegendURL` bereitstellt und CORS zulässt, wird dieser stattdessen bevorzugt. Bei fehlgeschlagenem Abruf wird **keine eigene Farbskala erfunden**, sondern ein Hinweis und ein Link zum Dienst eingeblendet.
+
+Darunter sind ausklappbare Informationen mit kurzer didaktischer Beschreibung, Interpretation, Aussagegrenzen, offiziellem Anbieter, Layernamen und Links zum Datensatz sowie `GetCapabilities` verfügbar. Wenn das WMS-Metadatendokument über Browser-JavaScript geladen werden darf, erscheint zusätzlich dessen offizieller `Abstract`. Andernfalls bleiben die lokal gepflegten Beschreibungen erhalten. Die fünf Beschreibungen stehen zentral in `assets/js/config.js`.
+
+**Prüfbedarf:** Ob der Frankfurter WMS die `GetLegendGraphic`-Operation und die jeweiligen `LegendURL`-Grafiken ausliefert, ist extern zu testen. Auch die Layernamen aus der QGIS-Layerliste bleiben mit den aktuellen `GetCapabilities` abzugleichen. Die neue Funktion repariert keine möglicherweise noch bestehenden WMS-Bildladefehler.

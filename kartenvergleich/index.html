@@ -16,7 +16,30 @@ script: /assets/js/map-compare.js
 </div>
 <div class="map-compare">
 <div class="map-panel"><div class="map-panel-header"><span class="eyebrow">Ansicht A</span><h2>Orthofoto</h2><p>Vegetation, Verkehrsflächen und Bebauung eigenständig identifizieren.</p></div><div id="map-left" class="map-frame" aria-label="Interaktive Karte mit Orthofoto" role="application"></div><div class="map-footer">Orthofoto Hessen (WMS); OpenStreetMap als Ersatzdarstellung</div></div>
-<div class="map-panel"><div class="map-panel-header"><span class="eyebrow">Ansicht B</span><h2>Stadtklimatische Fachdaten</h2><p>WMS-Ebene aus dem Klimaplanatlas Frankfurt 2026.</p></div><div id="map-right" class="map-frame" aria-label="Interaktive Stadtklimakarte" role="application"></div><div class="map-footer" id="map-layer-info" aria-live="polite">Ausgewählt: Klimatope 2026</div></div>
+<div class="map-panel"><div class="map-panel-header"><span class="eyebrow">Ansicht B</span><h2>Stadtklimatische Fachdaten</h2><p>WMS-Ebene aus dem Klimaplanatlas Frankfurt 2026.</p></div><div id="map-right" class="map-frame" aria-label="Interaktive Stadtklimakarte" role="application"></div><div class="map-footer" id="map-layer-info" aria-live="polite">Ausgewählt: Klimatope 2026</div>
+<section class="climate-legend-panel" aria-labelledby="climate-legend-heading">
+  <div class="climate-legend-top"><h3 id="climate-legend-heading">Legende · <span id="climate-legend-name">Klimatope 2026</span></h3>
+  <a id="climate-legend-link" href="#" target="_blank" rel="noopener noreferrer" title="Legende direkt beim Kartendienst öffnen">Legende öffnen</a></div>
+  <p id="climate-legend-status" class="mini" role="status" aria-live="polite">Legende wird vom WMS angefordert …</p>
+  <div id="climate-legend-image-wrap" class="climate-legend-image-wrap" hidden>
+    <img id="climate-legend-image" alt="Legende des ausgewählten WMS-Layers" loading="lazy" decoding="async">
+  </div>
+</section>
+<details class="climate-dataset-info" id="climate-dataset-details" open>
+  <summary>Informationen zum ausgewählten Datensatz</summary>
+  <div class="climate-dataset-content">
+    <h3 id="climate-dataset-title">Klimatope 2026</h3>
+    <p id="climate-dataset-description"></p>
+    <p><strong>Für die Kartenanalyse:</strong> <span id="climate-dataset-interpretation"></span></p>
+    <p><strong>Hinweis zur Aussagekraft:</strong> <span id="climate-dataset-limitation"></span></p>
+    <dl><dt>Quelle</dt><dd>Stadt Frankfurt am Main, Klimareferat · Klimaplanatlas 2026</dd>
+      <dt>Darstellung</dt><dd>WMS (thematische Kartenbilder, keine Messwerteabfrage)</dd>
+      <dt>Technischer Layername</dt><dd><code id="climate-dataset-layer"></code></dd></dl>
+    <p class="climate-dataset-links"><a href="https://data.gov.de/suche/daten/wms-klimaplanatlas-2026-frankfurt-am-main" target="_blank" rel="noopener noreferrer">Metadatensatz (GovData)</a> · <a id="climate-dataset-capabilities" href="#" target="_blank" rel="noopener noreferrer">WMS-GetCapabilities</a></p>
+    <details class="climate-service-description" id="climate-service-description" hidden><summary>Zusätzliche Beschreibung aus dem WMS</summary><p id="climate-service-abstract"></p></details>
+  </div>
+</details>
+</div>
 </div>
 <p id="map-status" class="map-warning" role="status" aria-live="polite">Die Karten benötigen eine Internetverbindung. Falls ein WMS nicht lädt, bleibt die OpenStreetMap-Grundkarte sichtbar.</p>
 <div class="wms-diagnostics" aria-label="WMS-Fehlersuche"><p class="mini"><strong>WMS-Prüfung:</strong> Falls nur OpenStreetMap erscheint, überprüfe die Dienste über <a href="https://www.gds-srv.hessen.de/cgi-bin/lika-services/ogc-free-images.ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetCapabilities" target="_blank" rel="noopener noreferrer">Orthofoto GetCapabilities</a> und <a href="https://geowebdienste.frankfurt.de/Klimaplanatlas_2026?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetCapabilities" target="_blank" rel="noopener noreferrer">Klimaplanatlas GetCapabilities</a>. Die offiziellen Layernamen und unterstützten Koordinatensysteme sind für die Anzeige entscheidend.</p></div>

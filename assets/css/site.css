@@ -195,3 +195,25 @@ body{background:#fff}
 .klimaspuren-app .leaflet-tile-loaded{visibility:inherit}
 .klimaspuren-app .wms-diagnostics{margin-top:.7rem;border-top:1px solid #e8ebea;padding-top:.45rem}
 .klimaspuren-app .wms-diagnostics a{text-decoration:underline;text-underline-offset:2px}
+
+
+/* OER-Kartenvergleich: originale WMS-Legende und fachliche Layerinformationen */
+.klimaspuren-app .climate-legend-panel{padding:13px 15px 15px;border-top:1px solid var(--ks-line);background:#fcfcfb}
+.klimaspuren-app .climate-legend-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.klimaspuren-app .climate-legend-top h3{font-size:.92rem;margin:0;font-weight:650}
+.klimaspuren-app .climate-legend-top a{font-size:.76rem;white-space:nowrap}
+.klimaspuren-app .climate-legend-panel .mini{margin:.65rem 0 0}
+.klimaspuren-app .climate-legend-image-wrap{overflow:auto;max-height:340px;padding:8px 0 2px}
+.klimaspuren-app .climate-legend-image-wrap img{display:block;width:auto;max-width:100%;height:auto;margin:0;border:0;box-shadow:none;background:#fff}
+.klimaspuren-app .climate-dataset-info{border-top:1px solid var(--ks-line);background:#fff}
+.klimaspuren-app .climate-dataset-info>summary{cursor:pointer;list-style:revert;padding:13px 15px;font-size:.85rem;font-weight:600;color:var(--ks-ink,#2c3330)}
+.klimaspuren-app .climate-dataset-info>summary:hover{background:#f7f9f8}
+.klimaspuren-app .climate-dataset-content{padding:0 15px 14px;font-size:.8rem;line-height:1.55}
+.klimaspuren-app .climate-dataset-content h3{font-size:.94rem;margin:.5rem 0}
+.klimaspuren-app .climate-dataset-content p{margin:.55rem 0}
+.klimaspuren-app .climate-dataset-content dl{display:grid;grid-template-columns:105px minmax(0,1fr);column-gap:9px;row-gap:5px;margin:12px 0;font-size:.76rem}
+.klimaspuren-app .climate-dataset-content dt{font-weight:600}
+.klimaspuren-app .climate-dataset-content dd{margin:0;overflow-wrap:anywhere}
+.klimaspuren-app .climate-dataset-content code{font-size:.72rem;overflow-wrap:anywhere}
+.klimaspuren-app .climate-service-description>summary{cursor:pointer;font-size:.77rem}
+@media (max-width:620px){.klimaspuren-app .climate-dataset-content dl{grid-template-columns:85px minmax(0,1fr)}}
