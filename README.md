@@ -1,60 +1,46 @@
-# Klimaspuren – GitHub-Pages-OER (Version 0.1)
+# Klimaspuren – GitHub Pages / Minimal Mistakes 4.28.0
 
-**Stand:** 25. November 2026  
-**Thema:** Grünstrukturen, Versiegelung und Stadtklima  
-**Technik:** Jekyll, GitHub Pages, Leaflet, WMS, GeoJSON
+Interaktive OER-Webseite zu Grünstrukturen, Versiegelung und Stadtklima. Die Seite basiert auf [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) **4.28.0** (Remote Theme). 
 
-## Enthaltene Seiten
+## GitHub Pages – Einrichten und Aktualisieren
 
-- `/` – Startseite
-- `/klimawissen/` – Stadtklima-Grundlagen und Quiz
-- `/kartenvergleich/` – synchronisierte Karten mit Orthofoto und Klimaplanatlas-WMS
-- `/erfassen/` – eigene Beobachtungen mit Kartenauswahl, Foto und qualitativem Formular (lokaler Browser-Speicher)
-- `/auswertung/` – lokale GeoJSON-Beobachtungen auf Karte mit Kategoriefilter; optional fiktive Beispieldaten
-- `/materialien/` – Arbeitsauftrag, CSV-Beobachtungsbogen, Beispieldaten, Quellen/Lizenzen
+Repository: `https://github.com/Obertjo/klimaspuren`  
+Website: `https://obertjo.github.io/klimaspuren/`
 
-## In GitHub Pages veröffentlichen
+1. Alle Projektdateien **im Wurzelverzeichnis** des Repositories speichern, nicht in einem zusätzlichen Unterordner.
+2. In **Settings → Pages** `Deploy from a branch`, `main`, `/(root)` auswählen. Das Repository ist für die hier gesetzte URL/BaseURL konfiguriert.
+3. In **Actions** den Pages-Build überprüfen. Falls der Build fehlschlägt, die Fehlermeldung aus dem Build-Protokoll prüfen.
+4. Beim Wechsel von Version 0.1 **unbedingt die alte Datei `_layouts/default.html` entfernen**. Sonst überschreibt das alte Layout das Minimal-Mistakes-Layout. Die alte `_includes/header.html` und `assets/js/site.js` werden nicht mehr benötigt.
 
-1. Auf GitHub **New repository** wählen, z. B. `klimaspuren`. Für GitHub Free das Repository **public** anlegen.
-2. Den **Inhalt dieses ZIP-Ordners** (nicht den übergeordneten Ordner) in die oberste Ebene des Repositorys hochladen; versteckte Ordner `_layouts`, `_includes` usw. mitnehmen.
-3. In `_config.yml` den Eintrag `baseurl: ""` zu `baseurl: "/klimaspuren"` ändern, wenn die URL `https://BENUTZERNAME.github.io/klimaspuren/` lautet. Bei einer **User-/Organization-Page** (`BENUTZERNAME.github.io`) bleibt der Wert `""`.
-4. Unter **Settings → Pages → Build and deployment** `Deploy from a branch`, `main`, `/(root)` wählen; speichern. GitHub baut eine Jekyll-Website automatisch.
-5. Unter **Actions** den Build verfolgen und anschließend die veröffentlichte Pages-URL öffnen.
+### Dateien bequem über github.dev übertragen
 
-Mehr Informationen: https://docs.github.com/en/pages
+Das Repository in GitHub öffnen und `.` drücken (oder `https://github.dev/Obertjo/klimaspuren` verwenden). Im Web-Editor den aktualisierten Inhalt des ZIP-Projekts in das Repository übernehmen, gelöschte Altdateien ebenfalls löschen, unter **Source Control** alle Änderungen stagen und committen. Der Web-Editor benötigt keine lokale Installation.
 
-## Lokal testen (optional)
+## Architektur
 
-Wenn Ruby und Bundler installiert sind:
+- `_config.yml`: `remote_theme: "mmistakes/minimal-mistakes@4.28.0"` mit `mint`-Skin, deutscher Locale, GitHub-Pages-Basis-URL.
+- `_data/navigation.yml`: Navigation des Minimal-Mistakes-Mastheads.
+- `_layouts/klimaspuren.html`: eigenes Layout, erbt das Theme-Layout `default`; die alte eigene Datei `_layouts/default.html` wird nicht mehr benutzt.
+- `_includes/head/custom.html`: projektspezifische CSS und Leaflet-CSS.
+- `_includes/footer/custom.html`: projektbezogene Hinweise und bedingtes Laden der Karten- und Erfassungsskripte.
+- `assets/css/main.scss`: kompiliert die Minimal-Mistakes-Styles; `assets/css/site.css` ergänzt projektspezifische Komponenten.
+- `kartenvergleich/`: synchronisierte Orthofoto-/Stadtklima-Karten.
+- `erfassen/`: lokale Fotodokumentation und qualitative Erfassung.
+- `auswertung/`: Kartenansicht, Filter, Import von GeoJSON.
+- `klimawissen/` und `materialien/`: didaktische Inhalte, Beobachtungsbogen und Arbeitsauftrag.
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
+## Zur Kartenfunktion
 
-Dann `http://127.0.0.1:4000/` öffnen. Bei lokalem Test das `baseurl` auf `""` setzen. Nur `python -m http.server` reicht für die Jekyll-Layouts nicht aus.
+WMS-Adressen und Layernamen stehen in `assets/js/config.js`. Die Layer sind vor produktiver Nutzung anhand der aktuellen GetCapabilities-Dokumente und Originallegenden zu prüfen. Wenn ein WMS nicht antwortet, erscheint ggf. eine OpenStreetMap-Hintergrundkarte.
 
-## Wichtige Einschränkungen
+## Datenspeicherung und Datenschutz
 
-**Erfassung und Fotos:** Daten werden nur im Browser (localStorage) gespeichert. Hochgeladene Fotos werden im Browser verkleinert und als JPEG in den GeoJSON-Export eingebettet. Es findet **kein Upload auf einen gemeinsamen Server** statt. Bei vollem Browser-Speicher erscheint ein Hinweis und die Beobachtung kann zur Sicherung exportiert werden. Import und Export sind lokale Vorgänge. Auf der Auswertungsseite importierte Dateien werden nur für die jeweilige Ansicht angezeigt, nicht dauerhaft gespeichert.
+Beobachtungen und ausgewählte Fotos werden **ausschließlich lokal im Browser** verarbeitet/gespeichert; sie werden nicht an einen zentralen Server geschickt. Mit GeoJSON lassen sich Beobachtungen exportieren und importieren. Für eine echte öffentliche Sammlung wäre später ein Backend mit Einwilligungs- und Moderationsprozess nötig. Foto- und Nutzungsrechte sowie Metadaten müssen dabei geprüft werden.
 
-**WMS:** Die URLs und Layernamen befinden sich in `assets/js/config.js`. Der Klima-WMS ist aus dem Klimaplanatlas 2026 der Stadt Frankfurt übernommen. Die technischen Layernamen der Layerauswahl stammen teilweise aus QGIS-Screenshots und wurden **nicht live gegen GetCapabilities überprüft**. Falls eine Ebene nicht lädt, die Schreibweise und die Browsereinbindung prüfen.
+## Lizenz
 
-- Frankfurt Klima WMS: `https://geowebdienste.frankfurt.de/Klimaplanatlas_2026`
-- Hessen DOP WMS: `https://www.gds-srv.hessen.de/cgi-bin/lika-services/ogc-free-images.ows`
-- WMS Capabilities: Endpunkt mit `?SERVICE=WMS&REQUEST=GetCapabilities` aufrufen.
+Eigene Lehrmaterialien: CC BY 4.0 (Autorenschaft noch konkretisieren); eigener Code: MIT in `LICENSE-CODE`. Für Minimal Mistakes, Leaflet und fremde Geodaten gelten deren jeweilige Lizenz-/Quellenbedingungen.
 
-**Interpretation:** Die stadtklimatischen Fachkarten sind modelliert bzw. abgeleitet und keine Live-Lufttemperaturmessungen. Ein Baumkronenbild weist nicht automatisch eine Temperaturdifferenz nach. Die Winterkartierung zeigt nur die aktuell sichtbaren Merkmale und aktuelle Beschattung, nicht die sommerliche Wirkung von Laubbäumen.
+## Lokal testen
 
-**Offene Veröffentlichung:** Die eigene Lehrressource ist für CC BY 4.0 vorgesehen; der Code unter MIT. **Die tatsächliche Autorenschaft muss vor Abgabe ergänzt werden.** Fremde Geodaten, Ortophotos und WMS-Visualisierungen haben gesonderte Bedingungen, die vor Veröffentlichung geprüft und entsprechend gekennzeichnet werden müssen.
-
-## Nächste Ausbaustufe
-
-1. WMS-Endpunkte und Layernamen im Browser testen; Originallegenden und Modellbeschreibung ergänzen.
-2. Beobachtungsbogen in einer kleinen Pilot-Lehrveranstaltung testen und fachlich nachschärfen.
-3. Externe Einsende- und Speicherlösung mit Datenschutz, Fotorechten, Prüfung und Moderation planen (z. B. KoboToolbox + moderierte GeoJSON-Veröffentlichung).
-4. Eigene Lehrgrafiken und konkrete Beispielaufgaben zu ausgewählten Orten ergänzen.
-
----
-
-**Hinweis:** Es gibt keinen persönlichen GitHub-Zugriff über das ZIP. Veröffentlichung erfolgt nach Upload ins eigene Repository oder über eine verbundene GitHub-App.
+Ruby + Bundler erforderlich: `bundle install` und `bundle exec jekyll serve`. Bei Installation via GitHub Pages erfolgt der Build normalerweise serverseitig. 
