@@ -1,0 +1,9 @@
+{
+  "type": "FeatureCollection",
+  "name": "FIKTIVE Beispieldaten – keine Geländebeobachtungen",
+  "features": [
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[8.6614,50.1267]},"properties":{"id":"bsp-01","site":"Beispiel A – Begrünung","date":"2026-11-25","category":"Gruenstruktur","green":"Baumgruppe","surface":"Bewachsener Boden","note":"Fiktiver Eintrag zur Illustration, keine tatsächliche Kartierung","example":true}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[8.673,50.121]},"properties":{"id":"bsp-02","site":"Beispiel B – Versiegelung","date":"2026-11-25","category":"Versiegelung","green":"Kaum oder keine Vegetation","surface":"Asphalt / Beton","note":"Fiktiver Eintrag zur Illustration, keine tatsächliche Kartierung","example":true}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[8.6568,50.1251]},"properties":{"id":"bsp-03","site":"Beispiel C – Begrünungspotenzial","date":"2026-11-25","category":"Potenzial","proposal":"Zusätzliche Bäume","note":"Fiktive Planungsidee, nicht fachlich geprüft","example":true}}
+  ]
+}

@@ -1,0 +1,11 @@
+<p class="klimaspuren-footer-note"><strong>Klimaspuren</strong> – Offenes Lernprojekt zu Stadtklima und urbanen Grünstrukturen. <a href="{{ '/materialien/' | relative_url }}">Materialien und Nutzungsrechte</a>.</p>
+{% if page.map %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<script src="{{ '/assets/js/config.js' | relative_url }}" defer></script>
+{% endif %}
+{% if page.nav == 'capture' or page.nav == 'analysis' %}
+<script src="{{ '/assets/js/observations.js' | relative_url }}" defer></script>
+{% endif %}
+{% if page.script %}
+<script src="{{ page.script | relative_url }}" defer></script>
+{% endif %}
