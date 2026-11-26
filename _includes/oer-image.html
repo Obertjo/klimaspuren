@@ -1,0 +1,12 @@
+{%- assign photo = site.data.oer_images[include.id] -%}
+{%- if photo -%}
+<figure class="oer-figure{% if include.compact %} oer-figure--compact{% endif %}">
+  <a class="oer-figure-image-link" href="{{ photo.source }}" target="_blank" rel="noopener noreferrer" title="Original und Lizenzinformationen bei Wikimedia Commons öffnen">
+    <img class="oer-figure-img" src="{{ photo.image }}" alt="{{ photo.alt | escape }}" loading="lazy" decoding="async">
+  </a>
+  <figcaption class="oer-figcaption">
+    <span class="oer-figcaption-text">{{ photo.description }}</span>
+    <span class="oer-credit">Foto: {{ photo.author }} · <a href="{{ photo.source }}" target="_blank" rel="noopener noreferrer">Original auf Wikimedia Commons</a> · <a href="{{ photo.license_url }}" target="_blank" rel="noopener noreferrer">{{ photo.license }}</a>. Verkleinerte, nicht beschnittene Webansicht.</span>
+  </figcaption>
+</figure>
+{%- endif -%}

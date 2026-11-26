@@ -35,6 +35,18 @@ Die Oberfläche orientiert sich an klassischen universitären Kurswebseiten: kap
 - `auswertung/`: Kartenansicht, Filter, Import von GeoJSON.
 - `klimawissen/` und `materialien/`: didaktische Inhalte, Beobachtungsbogen und Arbeitsauftrag.
 
+## Bildmaterial (Version 0.4)
+
+Vier offen lizenzierte Beispiel-Fotos von Wikimedia Commons wurden an fachlich passenden Stellen eingebunden:
+
+- **Einführung:** Platanenallee am Frankfurter Mainufer – Dguendel, CC BY 3.0.
+- **Klimatische Grundlagen:** Stadtbaum in der Fahrgasse – Yair-haklai, CC BY-SA 4.0; Parkplatz mit wasserdurchlässigem Belag und Asphalt – Aaron Volkening, CC BY 2.0.
+- **Eigene Erfassung:** Miquelallee im Winter – Daviidos, CC BY-SA 3.0.
+
+Die URLs, Urheber, Lizenzlinks, Bildbeschreibungen und Quellen werden in `_data/oer_images.yml` verwaltet und über `_includes/oer-image.html` ausgegeben. Eine tabellarische Datei liegt unter `assets/data/bildnachweise.csv`. Die Urhebernennung erfolgt unmittelbar unter jedem Foto; eine zweite Übersicht befindet sich auf der Seite **Materialien und Quellen**. Die Fotografien bleiben unter ihrer jeweiligen Original-Lizenz. Bei Bearbeitung von CC-BY-SA-Bildern gelten die Share-Alike-Pflichten. Das Copyright der Fotos wird nicht vom CC-BY-4.0-Hinweis für eigene Lehrtexte umfasst.
+
+**Technischer Hinweis:** Die Vorschaubilder werden derzeit aus Wikimedia Commons geladen und sind **nicht lokal im Repository gespeichert**. Das spart Dateigröße, benötigt jedoch eine Internetverbindung und die Erreichbarkeit von Wikimedia Commons. Für eine vollständig eigenständig nachnutzbare Offline-OER können die Bilder gemäß den individuellen Lizenzen lokal gespeichert und die URL-Felder in `_data/oer_images.yml` entsprechend angepasst werden. Die externen Bildquellen und Lizenzen müssen dabei erhalten bleiben.
+
 ## Zur Kartenfunktion
 
 WMS-Adressen und Layernamen stehen in `assets/js/config.js`. Die Layer sind vor produktiver Nutzung anhand der aktuellen GetCapabilities-Dokumente und Originallegenden zu prüfen. Wenn ein WMS nicht antwortet, erscheint ggf. eine OpenStreetMap-Hintergrundkarte.

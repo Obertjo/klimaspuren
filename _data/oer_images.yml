@@ -1,0 +1,43 @@
+# Nachprüfbare Metadaten zu extern eingebundenen OER-Fotografien.
+# Die Dateien werden als Commons-Thumbnails geladen; sie sind nicht Teil des Git-Repositories.
+# Die jeweiligen Fotolizenzen gelten unabhängig von der Lizenz der Lehrtexte.
+mainufer:
+  title: "Platanenallee am Mainufer, Frankfurt am Main"
+  author: "Dguendel"
+  license: "CC BY 3.0"
+  license_url: "https://creativecommons.org/licenses/by/3.0/deed.de"
+  source: "https://commons.wikimedia.org/wiki/File:Frankfurt_am_Main,_Platanenallee_am_Mainufer-1.jpg"
+  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Frankfurt_am_Main%2C_Platanenallee_am_Mainufer-1.jpg/960px-Frankfurt_am_Main%2C_Platanenallee_am_Mainufer-1.jpg"
+  alt: "Reihen alter Platanen an einer Grünfläche und einem Gleis am Frankfurter Mainufer im Spätherbst"
+  description: "Räumlich zusammenhängende Baumreihen, Grünfläche und Verkehrsweg am Mainufer; Aufnahme von 2012."
+  usage: "Einführung"
+fahrgasse:
+  title: "Straßenbaum in der Fahrgasse, Frankfurt am Main"
+  author: "Yair-haklai"
+  license: "CC BY-SA 4.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/4.0/deed.de"
+  source: "https://commons.wikimedia.org/wiki/File:A_tree_at_Fahrgasse,_Frankfurt.jpg"
+  image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/A_tree_at_Fahrgasse%2C_Frankfurt.jpg/960px-A_tree_at_Fahrgasse%2C_Frankfurt.jpg"
+  alt: "Großer belaubter Stadtbaum mit ausladender Krone zwischen Häusern, Fahrbahn und Aufenthaltsflächen in der Fahrgasse"
+  description: "Baumkrone und umgebende Nutzungen als Ausgangspunkt für Fragen nach Verschattung und Strahlung; Aufnahme von 2024."
+  usage: "Klimatische Grundlagen"
+pflaster:
+  title: "Wasserdurchlässiger Belag und Asphalt im Vergleich"
+  author: "Aaron Volkening"
+  license: "CC BY 2.0"
+  license_url: "https://creativecommons.org/licenses/by/2.0/deed.de"
+  source: "https://commons.wikimedia.org/wiki/File:UrbanEcoCenter_ParkingLot_porouspavementonleft_oct2012.jpg"
+  image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/UrbanEcoCenter_ParkingLot_porouspavementonleft_oct2012.jpg/960px-UrbanEcoCenter_ParkingLot_porouspavementonleft_oct2012.jpg"
+  alt: "Parkplatz in Milwaukee mit hellem wasserdurchlässigem Belag auf der linken Seite und dunklerem Asphalt auf der rechten Seite"
+  description: "Zwei technisch verschiedene Oberflächen an einem Parkplatz in Milwaukee (USA); Aufnahme von 2012."
+  usage: "Klimatische Grundlagen"
+miquelallee:
+  title: "Miquelallee, Frankfurt am Main, im Winter"
+  author: "Daviidos"
+  license: "CC BY-SA 3.0"
+  license_url: "https://creativecommons.org/licenses/by-sa/3.0/deed.de"
+  source: "https://commons.wikimedia.org/wiki/File:Frankfurt_am_Main_-_Miquelallee_(2).JPG"
+  image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Frankfurt_am_Main_-_Miquelallee_%282%29.JPG/960px-Frankfurt_am_Main_-_Miquelallee_%282%29.JPG"
+  alt: "Gehweg mit unbelaubten Straßenbäumen, Sträuchern und angrenzenden Wohngebäuden entlang der Miquelallee im Winter"
+  description: "Winterliche Standortansicht: Bäume, Unterwuchs, Wegbelag und Bebauung sind auch ohne sommerliches Blattwerk erfassbar; Aufnahme von 2014."
+  usage: "Anleitung zur Erfassung"

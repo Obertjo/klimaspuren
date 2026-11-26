@@ -135,3 +135,20 @@ body{background:#fff}
 .klimaspuren-app .course-definitions dd{margin:0 0 .75rem;padding-left:0;color:#4e595c}
 .klimaspuren-app .field label.checkline{display:flex;align-items:flex-start}
 .klimaspuren-app .field input[type="range"]{border:0;padding:.4rem 0;background:transparent}
+
+/* OER-Fotografien: bewusst zurückhaltend, passend zum Kurslayout */
+.klimaspuren-app .oer-figure{margin:1.55rem 0 1.15rem;max-width:780px}
+.klimaspuren-app .oer-figure-img{display:block;width:100%;height:auto;max-height:430px;object-fit:contain;object-position:left center;background:#f4f5f4;border:1px solid var(--ks-line)}
+.klimaspuren-app .oer-figure-image-link{display:block;max-width:100%}
+.klimaspuren-app .oer-figcaption{font-size:.77rem;line-height:1.55;color:var(--ks-muted);margin:.55rem 0 0;padding:0;max-width:100%}
+.klimaspuren-app .oer-figcaption-text{display:block;color:#434f4d;margin-bottom:.15rem}
+.klimaspuren-app .oer-credit{display:block;font-size:.73rem}
+.klimaspuren-app .oer-credit a{text-underline-offset:2px}
+.klimaspuren-app .oer-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start;margin:1.05rem 0 1.3rem}
+.klimaspuren-app .oer-gallery .oer-figure{margin:0;max-width:none}
+.klimaspuren-app .oer-gallery .oer-figure-img{height:225px;width:100%;max-height:none;object-fit:contain;object-position:center;background:#f4f5f4}
+.klimaspuren-app .oer-figure--compact{max-width:650px}
+.klimaspuren-app .observation-prompt{font-size:.9rem;line-height:1.65;color:#384b47;background:#f7f8f6;border-left:3px solid #799787;padding:.65rem .85rem;margin:.75rem 0 1.2rem}
+.klimaspuren-app .oer-source-table .mini{font-size:.74rem;line-height:1.5;color:var(--ks-muted)}
+@media (max-width:720px){.klimaspuren-app .oer-gallery{grid-template-columns:1fr;gap:15px}.klimaspuren-app .oer-gallery .oer-figure-img{height:auto;max-height:340px}}
+@media print{.klimaspuren-app .oer-figure-img{max-height:320px}.klimaspuren-app .oer-gallery{grid-template-columns:1fr 1fr}}
