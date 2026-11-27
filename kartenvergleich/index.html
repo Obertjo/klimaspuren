@@ -8,8 +8,27 @@ script: /assets/js/map-compare.js
 <header class="page-hero"><div class="container"><p class="eyebrow">Kapitel 02 · Räumliche Analyse</p><h1>Orthofoto und Klimakarte vergleichen</h1><p class="intro">Zwei synchronisierte Kartenausschnitte ermöglichen den Vergleich sichtbar kartierbarer Landbedeckung mit thematischen Daten des Frankfurter Klimaplanatlas 2026.</p></div></header>
 <section class="section"><div class="container"><h2>Interaktive Vergleichskarten</h2>
 <p class="small">Beide Ansichten besitzen denselben Mittelpunkt und Maßstab. Verschiebe oder vergrößere eine Karte, um den anderen Ausschnitt mitzubewegen.</p>
+<script src="{{ '/assets/js/layer-picker.js' | relative_url }}" defer></script>
 <div class="map-toolbar">
-<div class="field"><label for="climate-select">Stadtklimatische Ebene</label><select id="climate-select"><option value="Klimatope_2026">Klimatope 2026</option><option value="Straßen_mit_Vegetationsdefizit_2026">Straßen mit Vegetationsdefizit</option><option value="Vegetationshoehenraster_2026">Vegetationshöhen</option><option value="Sky_View_Faktor_2026">Sky View Factor</option></select></div>
+<div class="field climate-layer-field">
+  <label id="climate-layer-label">Stadtklimatische Ebene</label>
+  <!-- Das native Select bleibt als Kompatibilitäts-Schnittstelle für map-compare.js bestehen. -->
+  <select id="climate-select" class="climate-select-proxy" tabindex="-1" aria-hidden="true">
+    <option value="Klimatope_2026">Klimatope 2026</option>
+    <option value="Straßen_mit_Vegetationsdefizit_2026">Straßen mit Vegetationsdefizit</option>
+    <option value="Vegetationshoehenraster_2026">Vegetationshöhen</option>
+    <option value="Sky_View_Faktor_2026">Sky View Factor</option>
+  </select>
+  <details class="climate-layer-picker" id="climate-layer-picker">
+    <summary id="climate-layer-current" aria-labelledby="climate-layer-label climate-layer-current">Klimatope 2026</summary>
+    <div class="climate-layer-menu" role="group" aria-label="Stadtklimatische Ebene auswählen">
+      <button type="button" class="climate-layer-option is-active" data-layer="Klimatope_2026" aria-pressed="true">Klimatope 2026</button>
+      <button type="button" class="climate-layer-option" data-layer="Straßen_mit_Vegetationsdefizit_2026" aria-pressed="false">Straßen mit Vegetationsdefizit</button>
+      <button type="button" class="climate-layer-option" data-layer="Vegetationshoehenraster_2026" aria-pressed="false">Vegetationshöhen</button>
+      <button type="button" class="climate-layer-option" data-layer="Sky_View_Faktor_2026" aria-pressed="false">Sky View Factor</button>
+    </div>
+  </details>
+</div>
 <div class="field"><label for="climate-opacity">Deckkraft des Layers</label><input id="climate-opacity" type="range" min="20" max="100" value="75"></div>
 <div class="field"><label for="climate-show">Layer anzeigen</label><select id="climate-show"><option value="on">Ja</option><option value="off">Nein</option></select></div>
 <button class="btn secondary" id="map-reset" type="button">Ausschnitt zurücksetzen</button>

@@ -77,3 +77,11 @@ Im Kapitel `kartenvergleich` zeigt Ansicht B unterhalb der Karte eine Legende f�
 Darunter sind ausklappbare Informationen mit kurzer didaktischer Beschreibung, Interpretation, Aussagegrenzen, Links zum Datensatz sowie `GetCapabilities` verfügbar. Wenn das WMS-Metadatendokument über Browser-JavaScript geladen werden darf, erscheint zusätzlich dessen offizieller `Abstract`. Andernfalls bleiben die lokal gepflegten Beschreibungen erhalten. Die vier Beschreibungen stehen zentral in `assets/js/config.js`.
 
 **Prüfbedarf:** Ob der Frankfurter WMS die `GetLegendGraphic`-Operation und die jeweiligen `LegendURL`-Grafiken ausliefert, ist extern zu testen. Auch die Layernamen aus der QGIS-Layerliste bleiben mit den aktuellen `GetCapabilities` abzugleichen. Die neue Funktion repariert keine möglicherweise noch bestehenden WMS-Bildladefehler.
+
+
+## Version 0.8 – Layerauswahl (27.11.2026)
+
+Die Auswahl der vier Stadtklima-Layer wird nun als aufklappbares HTML-`details`-Menü
+mit anklickbaren Optionen dargestellt. Das zugrundeliegende `select#climate-select`
+bleibt verborgen erhalten, damit die bisherige `map-compare.js` unverändert funktioniert.
+Die neue Datei `assets/js/layer-picker.js` muss mit hochgeladen werden.
