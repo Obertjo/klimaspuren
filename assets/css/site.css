@@ -211,9 +211,4 @@ body{background:#fff}
 .klimaspuren-app .climate-dataset-content{padding:0 15px 14px;font-size:.8rem;line-height:1.55}
 .klimaspuren-app .climate-dataset-content h3{font-size:.94rem;margin:.5rem 0}
 .klimaspuren-app .climate-dataset-content p{margin:.55rem 0}
-.klimaspuren-app .climate-dataset-content dl{display:grid;grid-template-columns:105px minmax(0,1fr);column-gap:9px;row-gap:5px;margin:12px 0;font-size:.76rem}
-.klimaspuren-app .climate-dataset-content dt{font-weight:600}
-.klimaspuren-app .climate-dataset-content dd{margin:0;overflow-wrap:anywhere}
-.klimaspuren-app .climate-dataset-content code{font-size:.72rem;overflow-wrap:anywhere}
 .klimaspuren-app .climate-service-description>summary{cursor:pointer;font-size:.77rem}
-@media (max-width:620px){.klimaspuren-app .climate-dataset-content dl{grid-template-columns:85px minmax(0,1fr)}}

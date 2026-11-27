@@ -82,7 +82,6 @@
   const detailsDesc = document.getElementById('climate-dataset-description');
   const detailsInterpretation = document.getElementById('climate-dataset-interpretation');
   const detailsLimitation = document.getElementById('climate-dataset-limitation');
-  const detailsLayer = document.getElementById('climate-dataset-layer');
   const capsLink = document.getElementById('climate-dataset-capabilities');
   const serviceDescription = document.getElementById('climate-service-description');
   const serviceAbstract = document.getElementById('climate-service-abstract');
@@ -105,7 +104,6 @@
     detailsDesc.textContent = theme?.description || 'Für diesen Layer ist noch keine Kurzbeschreibung hinterlegt.';
     detailsInterpretation.textContent = theme?.interpretation || theme?.question || '';
     detailsLimitation.textContent = theme?.limitation || 'Für die Interpretation die originale Legende und die Metadaten heranziehen.';
-    detailsLayer.textContent = key;
     if (metadata?.abstract) {
       serviceAbstract.textContent = metadata.abstract;
       serviceDescription.hidden = false;
@@ -187,7 +185,7 @@
       report('Klima-Layer ausgeschaltet. Wähle „Ja“, um ihn einzublenden.');
       return;
     }
-    info.textContent = 'WMS-Layer: ' + key + ' · prüfe die Darstellung im rechten Kartenfenster';
+    info.textContent = 'Ausgewählt: ' + (theme?.label || 'Stadtklimatische Ebene');
     climate = L.tileLayer.wms(cfg.climateWms, {
       layers: key, format: 'image/png', transparent: true,
       version: '1.3.0', opacity: Number(opacity.value) / 100,

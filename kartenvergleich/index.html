@@ -9,7 +9,7 @@ script: /assets/js/map-compare.js
 <section class="section"><div class="container"><h2>Interaktive Vergleichskarten</h2>
 <p class="small">Beide Ansichten besitzen denselben Mittelpunkt und Maßstab. Verschiebe oder vergrößere eine Karte, um den anderen Ausschnitt mitzubewegen.</p>
 <div class="map-toolbar">
-<div class="field"><label for="climate-select">Stadtklimatische Ebene</label><select id="climate-select"><option value="Klimatope_2026">Klimatope 2026</option><option value="Straßen_mit_Vegetationsdefizit_2026">Straßen mit Vegetationsdefizit</option><option value="Vegetationshoehenraster_2026">Vegetationshöhen</option><option value="Sky_View_Faktor_2026">Sky View Factor</option><option value="Kaltluftabfluss_2026_M2000">Kaltluftabfluss (M2000)</option></select></div>
+<div class="field"><label for="climate-select">Stadtklimatische Ebene</label><select id="climate-select"><option value="Klimatope_2026">Klimatope 2026</option><option value="Straßen_mit_Vegetationsdefizit_2026">Straßen mit Vegetationsdefizit</option><option value="Vegetationshoehenraster_2026">Vegetationshöhen</option><option value="Sky_View_Faktor_2026">Sky View Factor</option></select></div>
 <div class="field"><label for="climate-opacity">Deckkraft des Layers</label><input id="climate-opacity" type="range" min="20" max="100" value="75"></div>
 <div class="field"><label for="climate-show">Layer anzeigen</label><select id="climate-show"><option value="on">Ja</option><option value="off">Nein</option></select></div>
 <button class="btn secondary" id="map-reset" type="button">Ausschnitt zurücksetzen</button>
@@ -32,9 +32,6 @@ script: /assets/js/map-compare.js
     <p id="climate-dataset-description"></p>
     <p><strong>Für die Kartenanalyse:</strong> <span id="climate-dataset-interpretation"></span></p>
     <p><strong>Hinweis zur Aussagekraft:</strong> <span id="climate-dataset-limitation"></span></p>
-    <dl><dt>Quelle</dt><dd>Stadt Frankfurt am Main, Klimareferat · Klimaplanatlas 2026</dd>
-      <dt>Darstellung</dt><dd>WMS (thematische Kartenbilder, keine Messwerteabfrage)</dd>
-      <dt>Technischer Layername</dt><dd><code id="climate-dataset-layer"></code></dd></dl>
     <p class="climate-dataset-links"><a href="https://data.gov.de/suche/daten/wms-klimaplanatlas-2026-frankfurt-am-main" target="_blank" rel="noopener noreferrer">Metadatensatz (GovData)</a> · <a id="climate-dataset-capabilities" href="#" target="_blank" rel="noopener noreferrer">WMS-GetCapabilities</a></p>
     <details class="climate-service-description" id="climate-service-description" hidden><summary>Zusätzliche Beschreibung aus dem WMS</summary><p id="climate-service-abstract"></p></details>
   </div>
