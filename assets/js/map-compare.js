@@ -79,6 +79,7 @@
   const legendWrap = document.getElementById('climate-legend-image-wrap');
   const legendImage = document.getElementById('climate-legend-image');
   const detailsTitle = document.getElementById('climate-dataset-title');
+  const detailsCitation = document.getElementById('climate-dataset-citation');
   const detailsDesc = document.getElementById('climate-dataset-description');
   const detailsInterpretation = document.getElementById('climate-dataset-interpretation');
   const detailsLimitation = document.getElementById('climate-dataset-limitation');
@@ -102,6 +103,7 @@
     legendName.textContent = display;
     detailsTitle.textContent = display;
     detailsDesc.textContent = theme?.description || 'Für diesen Layer ist noch keine Kurzbeschreibung hinterlegt.';
+    if (detailsCitation) detailsCitation.textContent = theme?.citation || 'Stadt Frankfurt am Main, 2026b';
     detailsInterpretation.textContent = theme?.interpretation || theme?.question || '';
     detailsLimitation.textContent = theme?.limitation || 'Für die Interpretation die originale Legende und die Metadaten heranziehen.';
     if (metadata?.abstract) {
