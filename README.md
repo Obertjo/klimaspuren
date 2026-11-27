@@ -85,3 +85,9 @@ Die Auswahl der vier Stadtklima-Layer wird nun als aufklappbares HTML-`details`-
 mit anklickbaren Optionen dargestellt. Das zugrundeliegende `select#climate-select`
 bleibt verborgen erhalten, damit die bisherige `map-compare.js` unverändert funktioniert.
 Die neue Datei `assets/js/layer-picker.js` muss mit hochgeladen werden.
+
+## Literaturangaben (Version 1.0)
+
+Wardenga (2002) wird an den drei Lernschritten Raumwahrnehmung, Kartenvergleich und Auswertung verwendet. Weitere Kurzbelege zur Stadtklimatologie stehen in den Lerntexten. Vollständige Quellenangaben befinden sich unter **Materialien und Quellen → Literaturverzeichnis**. Die Kartenansicht zeigt die zur Layerbeschreibung passenden Kurzbelege mit Link zum Literaturverzeichnis.
+
+Die bisherige interaktive Layerauswahl und die Kartensynchronisation bleiben unverändert.
