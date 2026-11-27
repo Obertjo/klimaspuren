@@ -249,3 +249,9 @@ body{background:#fff}
 .klimaspuren-app .climate-layer-menu .climate-layer-option.is-active {
   background:#edf3f0; color:#1e5348;
 }
+
+/* Quellenverweise im akademischen Kurslayout (Version 1.0) */
+.klimaspuren-app .source-cite{font-size:.91em;white-space:normal;color:#47675e;text-decoration:underline;text-decoration-color:#adc0b7;text-underline-offset:2px}
+.klimaspuren-app .literature-list li{padding:.18rem 0 .45rem;line-height:1.75;scroll-margin-top:6rem}
+.klimaspuren-app .climate-source-reference{font-size:.79rem;line-height:1.5;color:var(--ks-muted);margin:.55rem 0}
+.klimaspuren-app #literatur{scroll-margin-top:4rem}
