@@ -1,93 +1,74 @@
-# Klimaspuren – GitHub Pages / Minimal Mistakes 4.28.0
+# Klimaspuren
 
-Interaktive OER-Webseite zu Grünstrukturen, Versiegelung und Stadtklima. Die Seite basiert auf [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) **4.28.0** (Remote Theme). 
+**Grünstrukturen, Versiegelung und Stadtklima untersuchen**
 
-## GitHub Pages – Einrichten und Aktualisieren
+Klimaspuren ist eine frei zugängliche Lernwebseite zur Beobachtung und räumlichen Untersuchung klimarelevanter Eigenschaften städtischer Räume. Im Mittelpunkt stehen Grünstrukturen, versiegelte Flächen und ihre mögliche Bedeutung für das lokale Stadtklima.
 
-Repository: `https://github.com/Obertjo/klimaspuren`  
-Website: `https://obertjo.github.io/klimaspuren/`
+Die Webseite ist für eigenständige Erkundungen und kleinere Lehrveranstaltungen gedacht. Eigene Beobachtungen lassen sich mit Orthofotos und thematischen Stadtklimakarten vergleichen. Dabei soll deutlich werden, welche Informationen aus einer Kartierung hervorgehen und wo zusätzliche Daten notwendig sind.
 
-1. Alle Projektdateien **im Wurzelverzeichnis** des Repositories speichern, nicht in einem zusätzlichen Unterordner.
-2. In **Settings → Pages** `Deploy from a branch`, `main`, `/(root)` auswählen. Das Repository ist für die hier gesetzte URL/BaseURL konfiguriert.
-3. In **Actions** den Pages-Build überprüfen. Falls der Build fehlschlägt, die Fehlermeldung aus dem Build-Protokoll prüfen.
-4. Beim Wechsel von Version 0.1 **unbedingt die alte Datei `_layouts/default.html` entfernen**. Sonst überschreibt das alte Layout das Minimal-Mistakes-Layout. Die alte `_includes/header.html` und `assets/js/site.js` werden nicht mehr benötigt.
+**Webseite:** https://obertjo.github.io/klimaspuren/
 
-### Dateien bequem über github.dev übertragen
+## Inhalte
 
-Das Repository in GitHub öffnen und `.` drücken (oder `https://github.dev/Obertjo/klimaspuren` verwenden). Im Web-Editor den aktualisierten Inhalt des ZIP-Projekts in das Repository übernehmen, gelöschte Altdateien ebenfalls löschen, unter **Source Control** alle Änderungen stagen und committen. Der Web-Editor benötigt keine lokale Installation.
+- **Klimawissen:** Grundlagen zu Strahlung, Wärmehaushalt, Vegetation und Versiegelung.
+- **Kartenvergleich:** Zwei synchronisierte Ansichten desselben Raumausschnitts. Links wird ein Orthofoto gezeigt, rechts ein Layer des Frankfurter Klimaplanatlas 2026.
+- **Eigene Erfassung:** Beobachtungsorte, Fotos, Standortmerkmale und persönliche Wahrnehmungen dokumentieren.
+- **Auswertung:** Gesammelte Beobachtungen kartografisch darstellen, filtern und als GeoJSON austauschen.
+- **Materialien und Quellen:** Arbeitsaufträge, Beobachtungsbogen, Literatur und Bildnachweise.
 
-## Gestaltung (Version 0.3)
+Die vier Raumkonzepte nach Wardenga (2002) dienen als Grundlage für den Wechsel zwischen unterschiedlichen geographischen Betrachtungsweisen. Sichtbare Raummerkmale, ihre räumliche Verteilung und die persönliche Wahrnehmung werden bewusst unterschieden. Fachliche Kurzbelege sind in die Lerntexte eingebunden; das Literaturverzeichnis steht auf der Webseite unter `Materialien und Quellen`.
 
-Die Oberfläche orientiert sich an klassischen universitären Kurswebseiten: kapitelorientierte Seitenleiste, sachlicher Titelbereich, Fließtexte, tabellarischer Modulüberblick und einfache Arbeitsaufträge. Keine großflächige Hero-Grafik, keine dekorativen Kacheln, Farbverläufe oder Schatten. Die Karte und die Erfassung bleiben eigenständige Funktionsseiten.
+## Einsatz als Lernmaterial
 
-**Wichtig bei der Aktualisierung eines bestehenden GitHub-Repositories:** Die `update.zip` enthält nur veränderte Dateien; die `komplett.zip` enthält das vollständige Projekt. Die ZIP-Dateien jeweils entpacken und die enthaltenen Dateien und Unterordner ins **Hauptverzeichnis** hochladen (bestehende Dateien mit identischen Pfaden überschreiben). Die Unterordner `assets`, `_layouts`, `_data` und die Kapitelordner müssen erhalten bleiben. Bereits vorhandene zusätzliche Dateien wie `_layouts/default.html`, falls aus einer älteren Version, müssen weiterhin entfernt bleiben.
+Ein möglicher Ablauf für eine kurze Erkundung:
 
-## Architektur
+1. Einen Weg oder Stadtbereich auswählen und Grünstrukturen sowie versiegelte Oberflächen beobachten.
+2. Fotos und qualitative Beschreibungen mit Standortbezug erfassen.
+3. Den Bereich im Orthofoto und in einer stadtklimatischen Fachkarte betrachten.
+4. Gemeinsam diskutieren, welche Zusammenhänge erkennbar sind und welche Aussagen sich aus den verfügbaren Daten nicht ableiten lassen.
 
-- `_config.yml`: `remote_theme: "mmistakes/minimal-mistakes@4.28.0"` mit schlichtem `default`-Skin, deutscher Locale, GitHub-Pages-Basis-URL.
-- `_data/navigation.yml`: Navigation des Minimal-Mistakes-Mastheads.
-- `_layouts/klimaspuren.html`: eigenes Layout, erbt das Theme-Layout `default`; die alte eigene Datei `_layouts/default.html` wird nicht mehr benutzt.
-- `_includes/head/custom.html`: projektspezifische CSS und Leaflet-CSS.
-- `_includes/footer/custom.html`: projektbezogene Hinweise und bedingtes Laden der Karten- und Erfassungsskripte.
-- `assets/css/main.scss`: kompiliert die Minimal-Mistakes-Styles; `assets/css/site.css` ergänzt projektspezifische Komponenten.
-- `kartenvergleich/`: synchronisierte Orthofoto-/Stadtklima-Karten.
-- `erfassen/`: lokale Fotodokumentation und qualitative Erfassung.
-- `auswertung/`: Kartenansicht, Filter, Import von GeoJSON.
-- `klimawissen/` und `materialien/`: didaktische Inhalte, Beobachtungsbogen und Arbeitsauftrag.
+Die Beobachtungen ersetzen keine standardisierten meteorologischen Messungen. Auch die Fachkarten sollten im Hinblick auf Datengrundlage, Maßstab und Aussagegrenzen gelesen werden.
 
-## Bildmaterial (Version 0.4)
+## Technische Umsetzung
 
-Vier offen lizenzierte Beispiel-Fotos von Wikimedia Commons wurden an fachlich passenden Stellen eingebunden:
+Die Webseite wird mit Jekyll über GitHub Pages veröffentlicht. Als Grundlage für das Seitenlayout dient das Remote Theme [Minimal Mistakes 4.28.0](https://mmistakes.github.io/minimal-mistakes/). Karten und Formulare sind mit HTML, CSS und JavaScript umgesetzt.
 
-- **Einführung:** Platanenallee am Frankfurter Mainufer – Dguendel, CC BY 3.0.
-- **Klimatische Grundlagen:** Stadtbaum in der Fahrgasse – Yair-haklai, CC BY-SA 4.0; Parkplatz mit wasserdurchlässigem Belag und Asphalt – Aaron Volkening, CC BY 2.0.
-- **Eigene Erfassung:** Miquelallee im Winter – Daviidos, CC BY-SA 3.0.
+Für die Karten werden [Leaflet](https://leafletjs.com/), ein hessischer Orthofoto-WMS und WMS-Layer aus dem Klimaplanatlas 2026 der Stadt Frankfurt am Main verwendet. Die Layerkonfiguration befindet sich in `assets/js/config.js`. Die Legenden werden, soweit verfügbar, vom jeweiligen WMS geladen.
 
-Die URLs, Urheber, Lizenzlinks, Bildbeschreibungen und Quellen werden in `_data/oer_images.yml` verwaltet und über `_includes/oer-image.html` ausgegeben. Eine tabellarische Datei liegt unter `assets/data/bildnachweise.csv`. Die Urhebernennung erfolgt unmittelbar unter jedem Foto; eine zweite Übersicht befindet sich auf der Seite **Materialien und Quellen**. Die Fotografien bleiben unter ihrer jeweiligen Original-Lizenz. Bei Bearbeitung von CC-BY-SA-Bildern gelten die Share-Alike-Pflichten. Das Copyright der Fotos wird nicht vom CC-BY-4.0-Hinweis für eigene Lehrtexte umfasst.
+Wichtige Projektdateien:
 
-**Technischer Hinweis:** Die Vorschaubilder werden derzeit aus Wikimedia Commons geladen und sind **nicht lokal im Repository gespeichert**. Das spart Dateigröße, benötigt jedoch eine Internetverbindung und die Erreichbarkeit von Wikimedia Commons. Für eine vollständig eigenständig nachnutzbare Offline-OER können die Bilder gemäß den individuellen Lizenzen lokal gespeichert und die URL-Felder in `_data/oer_images.yml` entsprechend angepasst werden. Die externen Bildquellen und Lizenzen müssen dabei erhalten bleiben.
+- `_config.yml`: Einstellungen für Jekyll, Theme und GitHub Pages.
+- `assets/css/site.css`: Eigene Gestaltung der Webseite.
+- `assets/js/`: Karten- und Erfassungsfunktionen.
+- `kartenvergleich/`, `erfassen/`, `auswertung/`: Interaktive Seiten.
+- `klimawissen/`, `materialien/`: Lerntexte, Aufgaben und Quellen.
+- `_data/oer_images.yml`: Angaben zu den verwendeten Fotografien.
 
-## Zur Kartenfunktion
+### Lokal ausführen
 
-WMS-Adressen und Layernamen stehen in `assets/js/config.js`. Die Layer sind vor produktiver Nutzung anhand der aktuellen GetCapabilities-Dokumente und Originallegenden zu prüfen. Wenn ein WMS nicht antwortet, erscheint ggf. eine OpenStreetMap-Hintergrundkarte.
+Für einen lokalen Jekyll-Build werden Ruby und Bundler benötigt.
 
-## Datenspeicherung und Datenschutz
+```bash
+bundle install
+bundle exec jekyll serve
+```
 
-Beobachtungen und ausgewählte Fotos werden **ausschließlich lokal im Browser** verarbeitet/gespeichert; sie werden nicht an einen zentralen Server geschickt. Mit GeoJSON lassen sich Beobachtungen exportieren und importieren. Für eine echte öffentliche Sammlung wäre später ein Backend mit Einwilligungs- und Moderationsprozess nötig. Foto- und Nutzungsrechte sowie Metadaten müssen dabei geprüft werden.
+Die lokale Webseite ist anschließend unter `http://localhost:4000/klimaspuren/` erreichbar, sofern die Einstellungen aus `_config.yml` unverändert bleiben.
 
-## Lizenz
+## Beobachtungsdaten
 
-Eigene Lehrmaterialien: CC BY 4.0 (Autorenschaft noch konkretisieren); eigener Code: MIT in `LICENSE-CODE`. Für Minimal Mistakes, Leaflet und fremde Geodaten gelten deren jeweilige Lizenz-/Quellenbedingungen.
+Beobachtungen und ausgewählte Fotos werden derzeit lokal im Browser verarbeitet. Es gibt keine zentrale Datensammlung und keinen öffentlichen Upload. Die Beobachtungen lassen sich als GeoJSON exportieren und wieder importieren.
 
-## Lokal testen
+Eine spätere gemeinsame Sammlung würde eine gesonderte Lösung für Speicherung, Freigabe und Datenschutz benötigen. Insbesondere vor der Veröffentlichung von Fotos und genauen Ortsangaben müssten Nutzungsrechte und sensible Inhalte geprüft werden.
 
-Ruby + Bundler erforderlich: `bundle install` und `bundle exec jekyll serve`. Bei Installation via GitHub Pages erfolgt der Build normalerweise serverseitig. 
+## Quellen und Nachnutzung
 
+Die fachwissenschaftlichen Quellen und die Nachweise der verwendeten Kartenlayer stehen auf der Seite [Materialien und Quellen](https://obertjo.github.io/klimaspuren/materialien/).
 
-## Reparatur v0.5 – Kartenvergleich
+Die Fotografien werden derzeit direkt von Wikimedia Commons geladen. Urheber, Lizenz und Fundstelle sind in `_data/oer_images.yml` erfasst und unter den Bildern angegeben. Für diese Aufnahmen gelten die jeweiligen Einzellizenzen, nicht automatisch die Lizenz der übrigen Lernmaterialien.
 
-Die Darstellung von Leaflet wurde robuster gemacht: zusätzliches CSS-CDN, lokale Leaflet-Kernstile, Karten-Neuvermessung per ResizeObserver und Statusmeldungen bei WMS-Ausfällen. Die Orthofotoebene links und Klimaplanatlasebene rechts sind getrennt. Das hessische Orthofoto nutzt den veröffentlichten WMS `he_dop_rgb` (Hessische Verwaltung für Bodenmanagement und Geoinformation).
+Für die eigenen Lernmaterialien ist **CC BY 4.0** vorgesehen. Der eigene Programmcode steht unter der **MIT-Lizenz** (`LICENSE-CODE`). Bei einer Weiterverwendung müssen die Rechte an externen Bildern, Geodaten, Softwarebibliotheken und am Theme gesondert beachtet werden.
 
-**Offene Punkte:** Externe Live-GetMap-Aufrufe konnten in der Entwicklungsumgebung nicht getestet werden. Die Klimaplanatlas-Layer und die vom WMS unterstützten Koordinatensysteme sind auf der veröffentlichten Website über die neuen GetCapabilities-Links zu prüfen.
+## Stand und offene Punkte
 
-## Erweiterung v0.6 – Layerabhängige WMS-Legende und Datensatzinformationen
-
-Im Kapitel `kartenvergleich` zeigt Ansicht B unterhalb der Karte eine Legende für den jeweils ausgewählten Klimaplanatlas-Layer an. Die Legende wird mittels OGC-WMS-`GetLegendGraphic` direkt beim Anbieter angefordert. Falls der WMS beim Abruf seiner `GetCapabilities`-Datei im Browser einen `LegendURL` bereitstellt und CORS zulässt, wird dieser stattdessen bevorzugt. Bei fehlgeschlagenem Abruf wird **keine eigene Farbskala erfunden**, sondern ein Hinweis und ein Link zum Dienst eingeblendet.
-
-Darunter sind ausklappbare Informationen mit kurzer didaktischer Beschreibung, Interpretation, Aussagegrenzen, Links zum Datensatz sowie `GetCapabilities` verfügbar. Wenn das WMS-Metadatendokument über Browser-JavaScript geladen werden darf, erscheint zusätzlich dessen offizieller `Abstract`. Andernfalls bleiben die lokal gepflegten Beschreibungen erhalten. Die vier Beschreibungen stehen zentral in `assets/js/config.js`.
-
-**Prüfbedarf:** Ob der Frankfurter WMS die `GetLegendGraphic`-Operation und die jeweiligen `LegendURL`-Grafiken ausliefert, ist extern zu testen. Auch die Layernamen aus der QGIS-Layerliste bleiben mit den aktuellen `GetCapabilities` abzugleichen. Die neue Funktion repariert keine möglicherweise noch bestehenden WMS-Bildladefehler.
-
-
-## Version 0.8 – Layerauswahl (27.11.2026)
-
-Die Auswahl der vier Stadtklima-Layer wird nun als aufklappbares HTML-`details`-Menü
-mit anklickbaren Optionen dargestellt. Das zugrundeliegende `select#climate-select`
-bleibt verborgen erhalten, damit die bisherige `map-compare.js` unverändert funktioniert.
-Die neue Datei `assets/js/layer-picker.js` muss mit hochgeladen werden.
-
-## Literaturangaben (Version 1.0)
-
-Wardenga (2002) wird an den drei Lernschritten Raumwahrnehmung, Kartenvergleich und Auswertung verwendet. Weitere Kurzbelege zur Stadtklimatologie stehen in den Lerntexten. Vollständige Quellenangaben befinden sich unter **Materialien und Quellen → Literaturverzeichnis**. Die Kartenansicht zeigt die zur Layerbeschreibung passenden Kurzbelege mit Link zum Literaturverzeichnis.
-
-Die bisherige interaktive Layerauswahl und die Kartensynchronisation bleiben unverändert.
+Die Webseite ist ein weiterentwickelbarer OER-Prototyp. Die Erfassungsfunktion arbeitet derzeit ohne Serveranbindung. Die WMS-Dienste setzen eine Internetverbindung voraus; ihre Verfügbarkeit und technischen Layernamen sollten bei Änderungen der Datenangebote erneut geprüft werden.
